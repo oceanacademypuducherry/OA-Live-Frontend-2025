@@ -127,7 +127,7 @@
 "use client";
 
 import { useState } from "react";
-import { faqData } from "@/app/faq/faqdata";
+import { faqData } from "@/app/faq/data/faqdata";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";

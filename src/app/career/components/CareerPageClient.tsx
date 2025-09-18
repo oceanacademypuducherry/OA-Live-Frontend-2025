@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { jobs, type Job } from "./careercard";
+import { jobs, type Job } from "../data/careercard";
 
-export default function CareerPageClient() {
+export const CareerPageClient=()=> {
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
 
   return (

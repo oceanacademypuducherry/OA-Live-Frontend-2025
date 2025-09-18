@@ -1,15 +1,11 @@
-// src/components/MeetOurTeam.tsx
-"use client";
-
-import Image from "next/image";
-
-interface TeamMember {
+// src/data/teamdata.ts
+export interface TeamMember {
   name: string;
   role: string;
   img: string;
 }
 
-const team: TeamMember[] = [
+export const team: TeamMember[] = [
   { name: "Karthick Balaraman", role: "Founder & CEO", img: "https://i.ibb.co/D1D241r/Karthik.jpg" },
   { name: "Brindha Karthick", role: "Technical Lead", img: "https://i.ibb.co/tKBMPKc/Brindha.jpg" },
   { name: "Vijay Kumar", role: "Alumni", img: "https://i.ibb.co/g4V7Tmv/Vijay.jpg" },
@@ -26,42 +22,3 @@ const team: TeamMember[] = [
   { name: "Aashik Mohammed", role: "Intern", img: "https://firebasestorage.googleapis.com/v0/b/oceanlivereact.appspot.com/o/trainerImage%2Faashik.jpg?alt=media&token=f3a9f253-2566-4473-9634-72eda2478b60" },
   { name: "Sanjay kumar", role: "Intern", img: "https://firebasestorage.googleapis.com/v0/b/oceanlivereact.appspot.com/o/trainerImage%2Fsanjay_kumar.jpg?alt=media&token=28e1596a-2c6e-4127-b085-6ec507b617c9" },
 ];
-
-export const MeetOurTeam = () => {
-  return (
-    <section className="py-0 sm:py-10 px-6">
-      <h2 className="text-center text-2xl font-semibold text-[#00AEFF] mb-6">
-        Meet Our Team
-      </h2>
-      <div
-        className="
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 sm:gap-0 sm:justify-center
-          md:grid-cols-3 md:gap-6
-          lg:grid-cols-4
-          xl:grid-cols-5
-          gap-6
-          max-w-[1500px] mx-auto
-        "
-      >
-        {team.map((member, i) => (
-          <div key={i} className="text-center">
-            <div className="w-[230px] h-[230px] mx-auto relative mb-3">
-              <Image
-                src={member.img}
-                alt={member.name}
-                fill
-                className="object-fit rounded-lg border-[4px] border-[#005892] shadow-md"
-              />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">
-              {member.name}
-            </h3>
-            <p className="text-sm text-gray-600">{member.role}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};

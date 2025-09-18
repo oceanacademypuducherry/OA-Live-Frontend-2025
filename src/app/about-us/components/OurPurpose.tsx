@@ -2,7 +2,7 @@
 
 
 import Image from "next/image";
-import { GOALS, MISSION, OURVALUES, VISSION } from "../assets/img";
+import { GOALS, MISSION, OURVALUES, VISSION } from "../../assets/img";
 
 // Import images from your assets (or move them into /public)
 
@@ -36,7 +36,7 @@ const purposes: PurposeItem[] = [
   },
 ];
 
-const OurPurpose = () => {
+export const OurPurpose = () => {
   return (
     <section className="bg-white py-10 px-4 sm:px-6">
       <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold text-[#00AEFF] mb-6">
@@ -74,4 +74,4 @@ const OurPurpose = () => {
   );
 };
 
-export default OurPurpose;
+

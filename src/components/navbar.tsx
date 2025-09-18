@@ -17,7 +17,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { OCEAN } from "@/app/assets/img";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpenMobile, setServicesOpenMobile] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "Home", icon: <AiOutlineHome /> },
-    { to: "/about", label: "About Us", icon: <AiOutlineInfoCircle /> },
+    { to: "/about-us", label: "About Us", icon: <AiOutlineInfoCircle /> },
     { to: "/services", label: "Services", icon: <BsGear />, dropdown: true },
     { to: "/courses", label: "Courses", icon: <AiOutlineBook /> },
     { to: "/contact-us", label: "Contact Us", icon: <AiOutlineMail /> },
@@ -264,4 +264,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+

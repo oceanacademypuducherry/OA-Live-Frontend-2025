@@ -18,7 +18,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 // Place logo file at: /public/assets/oa-logo.png
 
 
-export default function Footer() {
+export const Footer=()=> {
   return (
     <footer className="bg-[#003B57] text-white">
       {/* Newsletter */}

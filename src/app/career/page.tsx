@@ -144,9 +144,12 @@
 
 
 
-import CareerPageClient from "./careerpageclient";
+
 import Script from "next/script";
-import { jobs } from "./careercard";
+
+
+import { jobs } from "./data/careercard";
+import { CareerPageClient } from "./components";
 
 export const metadata = {
   title: "Careers at Ocean Academy | Job Openings in Puducherry",

@@ -2,12 +2,13 @@
 "use client";
 
 
-import Navbar from "@/components/navbar";
-import page from "../page";
-import AboutOceanAcademy from "./aboutoceanacademy";
-import { MeetOurTeam } from "./meetourteam";
-import OurPurpose from "./ourpurpose";
-import Footer from "@/components/footer";
+
+
+
+import { MeetOurTeam } from "./components/MeetOurTeam";
+
+import { AboutOceanAcademy, OurPurpose } from "./components";
+import { Footer, Navbar } from "@/components";
 
 // import Navbar from "./common/Navbar";
 // import Footer from "@/common/Footer";

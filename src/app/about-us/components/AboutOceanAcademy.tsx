@@ -5,10 +5,10 @@ import Image from "next/image";
 
 // Import images/icons from your assets folder
 
-import { ABOUT, EXPERIENCE, STUDENT } from "../assets/img";
+import { ABOUT, EXPERIENCE, STUDENT } from "../../assets/img";
 
 
-const AboutOceanAcademy = () => {
+export const AboutOceanAcademy = () => {
   return (
     <section className="px-4 sm:px-6 xl:py-10 py-6 max-w-[1500px] mx-auto">
       {/* Content + Image */}
@@ -76,4 +76,4 @@ const AboutOceanAcademy = () => {
   );
 };
 
-export default AboutOceanAcademy;
+
