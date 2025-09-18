@@ -1,7 +1,6 @@
 import React from "react";
 import { About, CTA, DetailedService, Hero, ServicesGrid } from "./components";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import { Footer, Navbar } from "@/components";
 
 export default function page() {
   return (
@@ -35,7 +34,7 @@ export default function page() {
         {/* Call to Action */}
         <CTA />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

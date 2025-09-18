@@ -5,8 +5,7 @@ import {
   MapSection,
   ContactForm,
 } from "./components";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import { Footer, Navbar } from "@/components";
 
 export const metadata: Metadata = {
   title: "Contact Us | Ocean Academy",
