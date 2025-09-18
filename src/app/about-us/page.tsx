@@ -2,10 +2,12 @@
 "use client";
 
 
+import Navbar from "@/components/navbar";
 import page from "../page";
 import AboutOceanAcademy from "./aboutoceanacademy";
 import { MeetOurTeam } from "./meetourteam";
 import OurPurpose from "./ourpurpose";
+import Footer from "@/components/footer";
 
 // import Navbar from "./common/Navbar";
 // import Footer from "@/common/Footer";
@@ -13,7 +15,7 @@ import OurPurpose from "./ourpurpose";
 const AboutUsPage = () => {
   return (
     <div className="bg-white text-gray-800">
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className="bg-[#00AEFF] text-center py-12 px-4 text-white">
@@ -28,7 +30,7 @@ const AboutUsPage = () => {
       <AboutOceanAcademy />
       <OurPurpose />
       <MeetOurTeam />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

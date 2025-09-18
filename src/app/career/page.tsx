@@ -9,44 +9,44 @@ export default function CareerPage() {
   return (
     <div className=" text-gray-800 w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-t from-[#2E81A9] to-[#00AEFF] text-center py-4 px-0 sm:px-4 sm:py-6">
+      <section className="bg-gradient-to-t from-ocean-blue to-ocean-sky text-center py-4 px-0 sm:px-4 sm:py-6">
         <h1 className="text-2xl sm:text-4xl font-semibold text-white mb-2">
           Career
         </h1>
-        <h2 className="text-lg sm:text-2xl font-semibold text-[#FDCE5C]">
+        <h2 className="text-lg sm:text-2xl font-semibold text-ocean-yellow">
           Join Our Incredible Team
         </h2>
         <p className="mt-2 text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-white">
-          At Ocean, we're building a passionate team dedicated to transforming
-          ideas into impactful experiences. We value diverse perspectives,
-          collaboration, and a commitment to growth.
+            At Ocean, we’re building a passionate team dedicated to transforming
+            ideas into impactful experiences. Explore our job openings and start
+            your journey with us.
         </p>
       </section>
 
       {/* Job Section */}
       <section className="px-4 py-8 md:py-12 space-y-6 max-w-[1500px] mx-auto ">
         {/* Apply Info Card */}
-        <div className="bg-[#E6F6FE] rounded-xl border border-[#00AEFF] p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="bg-[#E6F6FE] rounded-xl border border-ocean-sky p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
             <p className="text-sm md:text-base text-[#1F2937]">
-              <span className="block text-[#00AEFF] font-medium mb-1 text-base md:text-lg">
+              <span className="block text-ocean-sky font-medium mb-1 text-base md:text-lg">
                 How To Apply?
               </span>
               If you’re interested in a role and are willing to commit to staying
               in Pondicherry for a minimum of 12 months
             </p>
           </div>
-          <div className="flex flex-col md:items-end gap-1 text-sm md:text-base text-gray-600">
-            <a
-              href="mailto:oceandocuments@gmail.com"
-              className="text-[#00AEFF] font-medium break-all"
-            >
-              oceandocuments@gmail.com
-            </a>
-            <span className="text-[#6B7280] text-xs sm:text-sm md:text-base">
-              Share Your CV, Portfolio, and a Cover Letter
-            </span>
-          </div>
+           <div className="flex flex-col md:items-end gap-1 text-sm md:text-base text-gray-600">
+              <a
+                href="mailto:oceandocuments@gmail.com"
+                className="text-[#00AEFF] font-medium underline"
+              >
+                oceandocuments@gmail.com
+              </a>
+              <span className="text-[#6B7280] text-xs sm:text-sm md:text-base">
+                Send us your CV, portfolio, and a cover letter
+              </span>
+            </div>
         </div>
 
         {/* Job Cards */}
@@ -70,13 +70,13 @@ export default function CareerPage() {
                 {/* Summary always visible */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                   <div>
-                    <p className="text-[16px] sm:text-base text-[#00AEFF] font-medium">
+                    <p className="text-[16px] sm:text-base text-ocean-sky font-medium">
                       {job.category}
                     </p>
                     <h3
                       className={`font-bold ${
                         selectedJob === job.id
-                          ? "text-lg text-[#00AEFF]"
+                          ? "text-lg text-ocean-sky"
                           : "text-lg text-gray-800"
                       }`}
                     >

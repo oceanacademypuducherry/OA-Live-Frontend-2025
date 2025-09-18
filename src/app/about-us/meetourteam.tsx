@@ -52,7 +52,7 @@ export const MeetOurTeam = () => {
                 src={member.img}
                 alt={member.name}
                 fill
-                className="object-cover rounded-lg border-[4px] border-[#005892] shadow-md"
+                className="object-fit rounded-lg border-[4px] border-[#005892] shadow-md"
               />
             </div>
             <h3 className="text-lg font-semibold text-gray-800">
