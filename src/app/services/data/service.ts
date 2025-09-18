@@ -1,3 +1,4 @@
+
 import { Imag1, Imag2, Imag3 } from "@/assets/service";
 import {
   GraduationCap,
@@ -15,7 +16,6 @@ import {
   CheckCircle,
   BookOpen,
 } from "lucide-react";
-
 
 // ---------------- Types ----------------
 interface Service {

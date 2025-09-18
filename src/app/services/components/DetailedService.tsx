@@ -1,7 +1,8 @@
-import React from 'react'
-import { Detailedservices } from '../data/service';
+import React from "react";
+import Image from "next/image";
+import { Detailedservices } from "../data/service";
 
-export  function DetailedService() {
+export function DetailedService() {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-6 space-y-6">
@@ -10,15 +11,22 @@ export  function DetailedService() {
             key={service.id}
             className="grid lg:grid-cols-2 gap-4 items-center"
           >
-            {/* Conditional image placement */}
+            {/* Image on left if reverse */}
             {service.reverse && (
               <div className="flex items-center justify-center">
-                <img src={service.image} alt={service.title} />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full max-w-md h-auto"
+                  width={400} // adjust as needed
+                  height={300} // adjust as needed
+                />
               </div>
             )}
 
+            {/* Text content */}
             <div>
-              <h3 className=" text-xl sm:text-3xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl sm:text-3xl font-bold text-gray-800 mb-4">
                 {service.title}
               </h3>
               <p className="text-md sm:text-lg text-gray-600 mb-6 leading-relaxed">
@@ -44,9 +52,16 @@ export  function DetailedService() {
               </div>
             </div>
 
+            {/* Image on right if not reverse */}
             {!service.reverse && (
               <div className="flex items-center justify-center">
-                <img src={service.image} alt={service.title} />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full max-w-md h-auto"
+                  width={400} // adjust as needed
+                  height={300} // adjust as needed
+                />
               </div>
             )}
           </div>
