@@ -19,39 +19,39 @@ export const Footer = () => {
     <footer className="bg-[#003B57] text-white">
       {/* Newsletter */}
       <div className="bg-sky-500">
-        <div className="max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-6 gap-6">
-          {/* Left Section */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-3 text-white w-full md:w-1/2 text-center md:text-left">
-            <FaEnvelope className="w-8 h-8 shrink-0 mt-1" />
-            <div className="pl-0 md:pl-1">
-              <p className="text-[18px] md:text-[20px] font-semibold">
-                Stay Updated
-              </p>
-              <p className="text-[14px] md:text-[16px] leading-relaxed">
-                Get the latest news, events, and educational insights delivered
-                to your inbox
-              </p>
-            </div>
-          </div>
-
-          {/* Right Section */}
-          <div className="flex flex-col sm:flex-row w-full md:w-auto items-center gap-3 sm:gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="w-full sm:w-64 lg:w-96 px-4 py-2 rounded-md text-black bg-white border border-white focus:outline-none focus:ring-2 focus:ring-sky-500 placeholder-gray-400"
-            />
-
-            <button className="bg-white text-sky-500 px-4 py-2 rounded-md flex items-center gap-2 text-[14px] md:text-[16px] font-medium w-full sm:w-auto justify-center">
-              <FaEnvelope className="w-4 h-4 shrink-0" /> Subscribe
-            </button>
-          </div>
-        </div>
+  <div className="max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col lg:flex-row items-center md:items-start justify-between px-6 md:px-9 py-6 gap-6 ">
+    {/* Left Section */}
+    <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 text-white w-full  text-center sm:text-left">
+      <FaEnvelope className="w-8 h-8 shrink-0 mt-1" />
+      <div className="pl-0 md:pl-1">
+        <p className="text-[18px] md:text-[20px] font-semibold">
+          Stay Updated
+        </p>
+        <p className="text-[14px] md:text-[16px] leading-relaxed">
+          Get the latest news, events, and educational insights delivered to your inbox
+        </p>
       </div>
+    </div>
+
+    {/* Right Section */}
+    <div className="flex flex-col sm:flex-row w-full md:w-auto items-center gap-3 sm:gap-4">
+      <input
+        type="email"
+        placeholder="Enter your email address"
+        className="w-full sm:w-64 2xl:w-96 px-4 py-2 rounded-md text-black text-[12px] sm:text-[14px] xl:text-[16px] bg-white border border-white focus:outline-none focus:ring-2 focus:ring-sky-500 placeholder-gray-400"
+      />
+
+      <button className="bg-white text-sky-500 px-4 py-2 rounded-md flex items-center gap-2 text-[12px] sm:text-[14px] xl:text-[16px] font-medium w-full sm:w-auto justify-center">
+        <FaEnvelope className="w-4 h-4 shrink-0" /> Subscribe
+      </button>
+    </div>
+  </div>
+</div>
+
 
       {/* Footer Main */}
       <div className="max-w-[90%] lg:max-w-[80%] mx-auto px-4 md:px-8 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 text-center sm:text-left items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-12 text-center sm:text-left items-center">
           {/* About Section */}
           <div className="flex justify-center sm:justify-start">
             <div>
@@ -102,12 +102,12 @@ export const Footer = () => {
           {/* Contact Info */}
          <div className="flex justify-center sm:justify-start">
   <div>
-    <h3 className="text-lg font-semibold mb-4 mt-2 text-sky-400">
+    <h3 className="text-lg font-semibold mb-4 mt-[-13] text-sky-400">
       Contact Info
     </h3>
 
     {/* Location */}
-    <div className="flex flex-row items-start sm:gap-2 gap-1 mb-4 text-[14px] md:text-[16px] text-gray-200 leading-relaxed justify-center sm:justify-start">
+    <div className="flex flex-row items-start sm:gap-2 gap-1 mb-8 text-[14px] md:text-[16px] text-gray-200 leading-relaxed justify-center sm:justify-start">
   <FaMapMarkerAlt className="text-[16px] md:text-[18px] shrink-0 mt-1" />
   <p className="text-center sm:text-left">
     No. 10, 2nd Floor, 45 Feet Road, Vengateswara Nagar, Near HDFC Bank, Saram, Puducherry-605013.
