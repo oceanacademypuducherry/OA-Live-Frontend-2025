@@ -1,8 +1,9 @@
 "use client";
 
 
+import { GOALS, MISSION, OURVALUES, VISSION } from "@/assets";
 import Image from "next/image";
-import { GOALS, MISSION, OURVALUES, VISSION } from "../../assets/img";
+
 
 // Import images from your assets (or move them into /public)
 
