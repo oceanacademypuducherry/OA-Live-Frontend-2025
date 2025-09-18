@@ -1,11 +1,11 @@
 "use client";
 
+import { ABOUT, EXPERIENCE, STUDENT } from "@/assets";
 import Image from "next/image";
 
 
 // Import images/icons from your assets folder
 
-import { ABOUT, EXPERIENCE, STUDENT } from "../../assets/img";
 
 
 export const AboutOceanAcademy = () => {
