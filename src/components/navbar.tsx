@@ -31,7 +31,7 @@ const Navbar = () => {
     { to: "/about", label: "About Us", icon: <AiOutlineInfoCircle /> },
     { to: "/services", label: "Services", icon: <BsGear />, dropdown: true },
     { to: "/courses", label: "Courses", icon: <AiOutlineBook /> },
-    { to: "/contact", label: "Contact Us", icon: <AiOutlineMail /> },
+    { to: "/contact-us", label: "Contact Us", icon: <AiOutlineMail /> },
     { to: "/login", label: "Login", icon: <AiOutlineLogin /> },
   ];
 
