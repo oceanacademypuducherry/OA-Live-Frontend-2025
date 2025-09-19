@@ -5,3 +5,5 @@ export { HeroSection } from "./HeroSection";
 export { EvenMore } from "./EvenMore";
 export { WeBest } from "./WeBest";
 export { Awards } from "./Awards";
+export { Stories } from "./Stories";
+export { OurClients } from "./OurClients";

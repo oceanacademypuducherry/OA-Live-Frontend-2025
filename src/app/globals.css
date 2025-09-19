@@ -30,3 +30,28 @@ body {
   color: var(--foreground);
   font-family:poppins,sans-serif;
 }
+
+@keyframes vertical-scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-vertical-scroll {
+  animation: vertical-scroll 20s linear infinite;
+}
+
+/* Pause animation on hover */
+.group:hover .animate-vertical-scroll {
+  animation-play-state: paused;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

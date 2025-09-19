@@ -3,7 +3,6 @@
 import { CK, MIT, PU, SMVC } from "@/assets";
 import Image from "next/image";
 
-
 export const Awards = () => {
   const awardsData = [
     {
@@ -33,34 +32,37 @@ export const Awards = () => {
   ];
 
   return (
-    <main className="mt-[50px] bg-[#F0F8FF] pt-[20px]">
-      <h2 className="text-[#4B5563] text-center max-[1000px]:text-[25px] max-[850px]:text-[22px] max-[600px]:text-[18px] max-[450px]:text-[17px]">
-        Awards & Recognition
-      </h2>
-      <p className="text-[#7E7E7E] text-center max-[700px]:text-[16px] max-[500px]:text-[14px]">
-        We have been recognized by the following for our reputation.
-      </p>
+    // 🔹 Background now covers top to bottom for this whole section
+    <div className="bg-[#F0F8FF] py-[50px]">
+      <main className="max-w-[1200px] mx-auto">
+        <h2 className="text-[#4B5563] text-center max-[1000px]:text-[25px] max-[850px]:text-[22px] max-[600px]:text-[18px] max-[450px]:text-[17px]">
+          Awards & Recognition
+        </h2>
+        <p className="text-[#7E7E7E] text-center max-[700px]:text-[16px] max-[500px]:text-[14px]">
+          We have been recognized by the following for our reputation.
+        </p>
 
-      <section className="max-w-[1200px] mx-auto flex gap-[30px] justify-center mt-[30px] mb-5 max-[900px]:flex-wrap">
-        {awardsData.map((award) => (
-          <div
-            key={award.id}
-            className="bg-white w-[180px] flex flex-col items-center rounded-[10px] p-3"
-          >
-            <p className="text-[13px] font-[600]">Recognized by</p>
-            <Image
-              src={award.img}
-              alt={award.alt}
-              height={100}
-              width={100}
-              className="object-contain"
-            />
-            <p className="text-[11px] font-[500] text-center whitespace-pre-line">
-              {award.text}
-            </p>
-          </div>
-        ))}
-      </section>
-    </main>
+        <section className="flex flex-wrap justify-center gap-[30px] mt-[30px] p-4">
+          {awardsData.map((award) => (
+            <div
+              key={award.id}
+              className="bg-white w-[180px] flex flex-col items-center rounded-[10px] p-6 "
+            >
+              <p className="text-[13px] font-[600]">Recognized by</p>
+              <Image
+                src={award.img}
+                alt={award.alt}
+                height={100}
+                width={100}
+                className="object-contain"
+              />
+              <p className="text-[11px] font-[500] text-center whitespace-pre-line mt-3">
+                {award.text}
+              </p>
+            </div>
+          ))}
+        </section>
+      </main>
+    </div>
   );
 };
