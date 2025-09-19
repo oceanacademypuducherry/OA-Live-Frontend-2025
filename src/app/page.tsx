@@ -1,5 +1,6 @@
 import { Navbar,Footer } from "@/components";
-import {  Awards, ExploreCourses, HeroSection, WeBest } from "./homepage/components";
+import {  Awards, ExploreCourses, HeroSection, OurClients, Stories, WeBest } from "./homepage/components";
+
 
 
 export default function Home() {
@@ -10,7 +11,9 @@ export default function Home() {
       <HeroSection/>
       <WeBest/><br/>
       <ExploreCourses /><br/>
-      <Awards/><br/>
+      <Awards/>
+      <Stories/>
+      <OurClients />
       <Footer/>
       
     </main>
