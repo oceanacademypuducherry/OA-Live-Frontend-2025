@@ -1,11 +1,18 @@
-import { Navbar } from "@/components";
+import { Navbar,Footer } from "@/components";
+import {  Awards, ExploreCourses, HeroSection, WeBest } from "./homepage/components";
 
 
 export default function Home() {
   return (
     <main>
-      <p className="text-red-800">Working</p>
+      
       <Navbar />
+      <HeroSection/>
+      <WeBest/><br/>
+      <ExploreCourses /><br/>
+      <Awards/><br/>
+      <Footer/>
+      
     </main>
   );
 }

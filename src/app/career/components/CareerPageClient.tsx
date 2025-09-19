@@ -9,7 +9,7 @@ export const CareerPageClient=()=> {
   return (
     <div className="text-gray-800 w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-t from-ocean-blue to-ocean-sky text-center py-4 px-0 sm:px-4 sm:py-6">
+      <section className="bg-gradient-to-r from-ocean-blue to-ocean-sky text-center py-4 px-0 sm:px-4 sm:py-6">
         <h1 className="text-2xl sm:text-4xl font-semibold text-ocean-white mb-2">
           Career
         </h1>
