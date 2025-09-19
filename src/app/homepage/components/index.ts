@@ -1,4 +1,3 @@
-
 export { CourseOptions } from "./CourseOption";
 export { ExploreCourses } from "./ExploreCourses";
 export { HeroSection } from "./HeroSection";
@@ -7,3 +6,6 @@ export { WeBest } from "./WeBest";
 export { Awards } from "./Awards";
 export { Stories } from "./Stories";
 export { OurClients } from "./OurClients";
+export { CommunitySection } from "./CommunitySection";
+export { CompaniesSection } from "./CompaniesSection";
+export { CTASection } from "./CTASection";

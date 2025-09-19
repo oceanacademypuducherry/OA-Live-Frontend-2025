@@ -11,7 +11,7 @@ export const CommunitySection: React.FC = () => {
     <section className="bg-white py-16 px-6">
       {/* Section Heading */}
       <div className="text-center max-w-3xl mx-auto">
-        <div className="flex items-center gap-2 mx-auto max-w-[210px] sm:max-w-[230px] border border-gray-300 hover:shadow-md rounded-2xl p-2">
+        <div className="flex items-center gap-2 mx-auto max-w-[230px] sm:max-w-[250px] border border-gray-300 hover:shadow-md rounded-2xl p-2">
           <Globe className="text-[#0E90CF]" size={24} />
           <h3 className="text-lg sm:text-xl font-bold text-[#0E90CF]">
             Global Community
