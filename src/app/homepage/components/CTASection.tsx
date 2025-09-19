@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Link from "next/link";
 
 export function CTASection() {
   return (
@@ -13,14 +15,20 @@ export function CTASection() {
         Transform your career with Ocean academy’s industry leading courses.
         Start your journey to working with your dream company today.
       </p>
+
       <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+        {/* Primary CTA */}
         <button className="w-[200px] font-semibold bg-gradient-to-r from-[#0E90CF] via-[#0E90CF] to-[#034E72] bg-[length:200%_100%] bg-left hover:bg-right text-white px-6 py-3 rounded-full shadow transition-all duration-500">
           Start Your Journey
         </button>
 
-        <button className=" w-[200px] font-medium border border-gray-800 text-gray-600 px-6 py-3 rounded-full hover:bg-gray-100 transition">
+        {/* Secondary CTA → Navigate to Review Page */}
+        <Link
+          href="/review"
+          className="w-[220px] text-center font-medium border border-gray-800 text-gray-600 px-2 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-100 transition"
+        >
           View Success Stories
-        </button>
+        </Link>
       </div>
     </section>
   );

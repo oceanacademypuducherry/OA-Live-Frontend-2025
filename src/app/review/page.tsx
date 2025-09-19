@@ -5,10 +5,12 @@ import {
   ReviewCTA,
   VideoTestimonialsSection,
 } from "./components";
+import { Navbar } from "@/components";
 
 export default function page() {
   return (
     <div>
+      {/* <Navbar /> */}
       <HeroSection />
       <VideoTestimonialsSection />
       <GoogleReviews />
