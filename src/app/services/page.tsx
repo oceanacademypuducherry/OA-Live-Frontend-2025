@@ -34,7 +34,7 @@ export default function page() {
         {/* Call to Action */}
         <CTA />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
