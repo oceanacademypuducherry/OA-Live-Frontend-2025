@@ -31,5 +31,5 @@ export const clients: Client[] = [
   {
     name: "CK college",
     logo: CK,
-  },
+  },  
 ];
