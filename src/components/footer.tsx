@@ -70,31 +70,43 @@ export const Footer = () => {
                 Follow Us
               </h3>
               <div className="flex justify-center sm:justify-start gap-3 mt-4 flex-wrap">
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
-                >
-                  <FaFacebookF className="text-[16px] md:text-[18px]" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
-                >
-                  <FaYoutube className="text-[16px] md:text-[18px]" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
-                >
-                  <FaSquareInstagram className="text-[16px] md:text-[18px]" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
-                >
-                  <FaLinkedinIn className="text-[16px] md:text-[18px]" />
-                </Link>
-              </div>
+  <Link
+    href="https://www.facebook.com/oceanacademy.co.in"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
+  >
+    <FaFacebookF className="text-[16px] md:text-[18px]" />
+  </Link>
+
+  <Link
+    href="https://www.youtube.com/@ocean_academy"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
+  >
+    <FaYoutube className="text-[16px] md:text-[18px]" />
+  </Link>
+
+  <Link
+    href="https://www.instagram.com/oceanacademy_official/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
+  >
+    <FaSquareInstagram className="text-[16px] md:text-[18px]" />
+  </Link>
+
+  <Link
+    href="https://www.linkedin.com/company/oceanacademyedu/posts/?feedView=all"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-[rgba(187,175,175,0.2)] hover:bg-sky-500 transition"
+  >
+    <FaLinkedinIn className="text-[16px] md:text-[18px]" />
+  </Link>
+</div>
+
             </div>
           </div>
 
@@ -134,34 +146,48 @@ export const Footer = () => {
               <h3 className="text-lg font-semibold mb-4 text-sky-400">Quick Links</h3>
               <ul className="space-y-3 md:space-y-4 text-[14px] md:text-[16px] text-gray-200">
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="/courses" className="hover:text-sky-400">
                     Courses
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="/contact-us" className="hover:text-sky-400">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
-                    Placement
-                  </Link>
+                  <Link
+  href="https://placement.oceanacademy.co.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-sky-400"
+>
+  Placement
+</Link>
+
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="/services" className="hover:text-sky-400">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="/gallery" className="hover:text-sky-400">
                     Gallery
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
-                    Job Portal
-                  </Link>
+               
+
+                  <Link
+  href="https://candidate.oceanacademy.co.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-sky-400"
+>
+ Job Portal
+</Link>
+
                 </li>
               </ul>
             </div>
@@ -182,7 +208,7 @@ export const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="/about-us" className="hover:text-sky-400">
                     About Us
                   </Link>
                 </li>

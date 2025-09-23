@@ -40,15 +40,15 @@ const purposes: PurposeItem[] = [
 export const OurPurpose = () => {
   return (
     <section className="bg-white py-10 px-4 sm:px-6">
-      <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold text-[#00AEFF] mb-6">
+      <h2 className="text-center text-[20px] sm:text-[24px] md:text-[24px] font-semibold text-primary mb-6">
         Our Purpose
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6  2xl:max-w-[1024px] xl:max-w-[950px] lg:max-w-[850px] md:max-w-[750px] mx-auto">
         {purposes.map((item, i) => (
           <div
             key={i}
-            className="bg-gray-50 p-4 sm:p-6 rounded-lg shadow transition-transform hover:scale-[1.02]"
+            className="bg-gray-50 p-4 sm:p-6  rounded-lg shadow transition-transform hover:scale-[1.02]"
           >
             {/* Image + Title */}
             <div className="flex items-center gap-3 sm:gap-4 mb-3">
@@ -65,7 +65,7 @@ export const OurPurpose = () => {
             </div>
 
             {/* Description */}
-            <p className="text-[14px] sm:text-[14px] md:text-[14px] lg:text-[16px] text-gray-600 leading-relaxed">
+            <p className="text-[14px] sm:text-[14px] md:text-[16px] lg:text-[16px] text-secondary leading-relaxed">
               {item.desc}
             </p>
           </div>

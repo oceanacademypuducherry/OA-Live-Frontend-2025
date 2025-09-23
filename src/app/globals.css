@@ -8,11 +8,13 @@
 
 @theme inline {
 
-  --color-ocean-blue: #034E72;
-  --color-ocean-sky: #00AEFF;
+  --color-primary-dark: #034E72;
+  --color-primary: #00AEFF;
   --color-ocean-yellow:#FDCE5C;
   --color-ocean-white:white;
   --color-ocean-skyblue:#E6F6FE;
+  --color-secondary:#5C5A5A;
+
   --bg-ocean-gradient: linear-gradient(to top, var(--color-ocean-blue), var( --color-ocean-sky));
 
 

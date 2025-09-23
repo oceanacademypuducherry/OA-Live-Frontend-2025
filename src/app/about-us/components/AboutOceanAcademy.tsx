@@ -10,15 +10,15 @@ import Image from "next/image";
 
 export const AboutOceanAcademy = () => {
   return (
-    <section className="px-4 sm:px-6 xl:py-10 py-6 max-w-[1500px] mx-auto">
+    <section className="px-4 sm:px-6 xl:py-10 py-6 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[900px] mx-auto">
       {/* Content + Image */}
       <div className="flex flex-col xl:flex-row gap-6">
         {/* Left Content */}
         <div className="flex-1 mt-1 order-1">
-          <h2 className="text-xl sm:text-2xl font-semibold text-[#00AEFF] mb-4">
+          <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-4">
             About Ocean Academy
           </h2>
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+          <p className="text-secondary text-sm sm:text-base leading-relaxed">
             At Ocean Academy, learning and technology come together to open doors
             for your future. We believe in more than just teaching — we inspire
             innovation. Our programs are designed to help you master the latest
@@ -28,7 +28,7 @@ export const AboutOceanAcademy = () => {
             learners, mentors, and innovators.
           </p>
           <br />
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+          <p className="text-secondary text-sm sm:text-base leading-relaxed">
             As an ISO 9001:2008 certified institution, Ocean Academy is committed
             to delivering the highest standards of education and training. Here,
             you’ll find not just knowledge, but the confidence and skills to go
@@ -38,25 +38,25 @@ export const AboutOceanAcademy = () => {
           {/* Stats Section */}
           <div className="mt-6 flex flex-row items-start sm:items-center gap-4">
             {/* Students trained */}
-            <div className="flex items-center gap-2 border border-[#00AEFF] bg-[#E6F6FE] px-1 sm:px-4 py-2 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2 border border-primary bg-[#E6F6FE] px-1 sm:px-4 py-2 rounded-lg shadow-sm">
               <Image
                 src={STUDENT}
                 alt="students"
                 className="w-4 h-4 sm:w-6 sm:h-6"
               />
-              <span className="text-[#00AEFF] font-medium text-[10px] sm:text-sm md:text-base">
+              <span className="text-primary font-medium text-[10px] sm:text-sm md:text-base">
                 10,000+ Students trained
               </span>
             </div>
 
             {/* Years Experience */}
-            <div className="flex items-center gap-2 border border-[#00AEFF] bg-[#E6F6FE] px-3 sm:px-4 py-2 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2 border border-primary bg-[#E6F6FE] px-3 sm:px-4 py-2 rounded-lg shadow-sm">
               <Image
                 src={EXPERIENCE}
                 alt="experience"
                 className="w-4 h-4 sm:w-6 sm:h-6"
               />
-              <span className="text-[#00AEFF] font-medium text-[10px] sm:text-sm md:text-base">
+              <span className="text-primary font-medium text-[10px] sm:text-sm md:text-base">
                 14+ Years Experience
               </span>
             </div>
