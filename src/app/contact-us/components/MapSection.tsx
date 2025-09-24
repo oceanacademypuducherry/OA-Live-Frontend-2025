@@ -3,7 +3,9 @@ import React from "react";
 export function MapSection() {
   return (
     <div className="bg-white rounded-2xl sm:shadow-lg p-2 sm:p-8">
-      <h3 className="text-2xl font-bold text-[#034E72] mb-6">Find Us</h3>
+      <h3 className="text-xl sm:text-2xl font-bold text-[#034E72] mb-6">
+        Find Us
+      </h3>
 
       <div
         className="relative rounded-lg overflow-hidden"

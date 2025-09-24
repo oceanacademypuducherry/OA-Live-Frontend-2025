@@ -29,7 +29,7 @@ export function ServicesGrid() {
 
               {/* Main card */}
               <div
-                className={`relative h-full ${service.bgColor} rounded-2xl p-6 border border-slate-200 shadow-md overflow-hidden will-change-transform`}
+                className={`relative h-full ${service.bgColor} rounded-2xl  p-6 border border-slate-200 shadow-md overflow-hidden will-change-transform hover:shadow-lg`}
               >
                 {/* Corner gradient (lightweight) */}
                 <div className="absolute top-0 right-0 w-24 h-24 pointer-events-none">
@@ -40,13 +40,15 @@ export function ServicesGrid() {
 
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 ${service.iconColor} rounded-xl flex items-center justify-center mb-4 text-white shadow-md relative z-10`}
+                  className={`w-14 h-14 ${service.iconColor} rounded-xl flex items-center group-hover:shadow-lg group-hover:scale-105 justify-center mb-4 text-white shadow-md relative z-10`}
                 >
                   <MemoIcon Icon={Icon} className="w-6 h-6 text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-left text-xl font-semibold text-slate-900 mb-2 relative z-10">
+                <h3
+                  className={`text-left text-xl font-semibold text-slate-900 mb-2  ${service.textColor} relative z-10`}
+                >
                   {service.title}
                 </h3>
 

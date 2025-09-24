@@ -1,7 +1,7 @@
-import React from 'react'
-import { aboutCards } from '../data/service';
+import React from "react";
+import { aboutCards } from "../data/service";
 
-export  function About() {
+export function About() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
@@ -21,7 +21,7 @@ export  function About() {
           {aboutCards.map((card) => (
             <div key={card.id} className="text-center">
               <div
-                className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${card.gradient} rounded-2xl mx-auto mb-4 flex items-center justify-center`}
+                className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${card.gradient}  hover:bg-gray-50 hover:shadow-lg hover:scale-105 rounded-2xl mx-auto mb-4 flex items-center justify-center`}
               >
                 <card.icon className="sm:w-8 sm:h-8 w-6 h-6 text-white" />
               </div>

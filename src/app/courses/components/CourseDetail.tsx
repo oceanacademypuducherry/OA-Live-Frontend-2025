@@ -62,7 +62,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
                 {/* Course Title */}
                 <div className="absolute bottom-1 sm:bottom-4 left-4 sm:left-8 right-4 sm:right-8">
                   <h1 className="text-white text-xl sm:text-2xl lg:text-3xl font-semibold sm:font-bold leading-tight">
-                    {course.title}
+                    {course.courseName}
                   </h1>
                 </div>
 
