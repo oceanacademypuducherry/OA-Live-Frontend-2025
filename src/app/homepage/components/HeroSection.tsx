@@ -40,7 +40,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-t from-[#056f9c] to-[#189bd8] sm:py-[30px] lg:py-[40px] 2xl:py-[70px] py-[20px] px-[6px] md:px-[50px] relative overflow-hidden">
+    <section className="bg-gradient-to-t from-[#056f9c] to-[#189bd8] sm:py-[30px] lg:py-[40px] 2xl:py-[40px] py-[20px] px-[6px] md:px-[50px] relative overflow-hidden">
       {/* Background Pattern */}
       <img
         src={TOPPATTERN.src}
@@ -53,7 +53,7 @@ export const HeroSection = () => {
 
         {/* Left Content (Text) */}
         <div className="text-white xl:text-left  text-center xl:max-w-[40%] max-w-full order-2 xl:order-1">
-          <h1 className="text-[26px] md:text-[38px] font-bold leading-[1.375] mt-5 md:mt-0 sm:mt-5">
+          <h1 className="text-[26px] md:text-[38px] font-semibold leading-[1.375] mt-5 md:mt-0 sm:mt-5">
             Transforming Careers <br /> with Future-Ready Skills
           </h1>
           <p className="mt-[16px] text-[15px] sm:text-[18px] max-w-[512px] md:max-w-[712px] mx-auto leading-[2]">
@@ -99,7 +99,7 @@ export const HeroSection = () => {
           <div className="relative group w-fit rounded-[12px] overflow-hidden">
   <video
     ref={videoRef}
-    className="h-[220px] sm:h-[300px] md:h-[350px] lg:h-[380px] w-full object-cover"
+    className="h-[220px] sm:h-[300px] md:h-[350px] lg:h-[330px] w-full object-cover"
     muted
     playsInline
     preload="metadata"

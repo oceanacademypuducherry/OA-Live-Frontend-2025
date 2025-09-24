@@ -56,11 +56,11 @@ export const Stories = () => {
         {/* Heading */}
         <h2
           id="stories-heading"
-          className="text-[20px] sm:text-3xl font-semibold text-[#0E90CF] mb-2"
+          className="text-[20px] sm:text-title font-normal text-[#0E90CF] mb-2"
         >
           Stories That Inspire
         </h2>
-        <p className="text-gray-600 text-sm sm:text-base mb-10 max-w-[25rem] sm:max-w-[33rem] mx-auto">
+        <p className="text-secondary text-sm sm:text-base mb-10 max-w-[25rem] sm:max-w-[33rem] mx-auto">
           Discover how learners turned knowledge into confidence and careers with Ocean Academy.
         </p>
 
@@ -92,10 +92,10 @@ export const Stories = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4" itemProp="reviewBody">
+                    <p className="text-sm text-secondary mb-4" itemProp="reviewBody">
                       {t.text}
                     </p>
-                    <div className="flex text-yellow-500" itemProp="reviewRating">
+                    <div className="flex text-ocean-yellow" itemProp="reviewRating">
                       {[...Array(5)].map((_, i) => (
                         <FaStar key={i} aria-hidden="true" />
                       ))}

@@ -58,7 +58,7 @@ export const EvenMore = () => {
       />
 
       <article className="mt-[50px] max-w-[1200px] mx-auto relative z-10">
-        <h2 className="text-center text-[#4B5563] text-[20px] sm:text-[30px] font-semibold">
+        <h2 className="text-center text-[#4B5563] text-[20px] sm:text-title font-normal">
           Plus, You Get
           <span className="text-[#00AEFF]"> Even More</span>
         </h2>

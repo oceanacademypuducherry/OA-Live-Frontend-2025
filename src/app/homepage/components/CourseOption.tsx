@@ -17,7 +17,7 @@ export const CourseOptions = () => {
     <main>
       <div className="flex items-center justify-between">
         {/* Title */}
-        <h2 className="text-[#0E90CF] sm:text-[30px] text-[20px] font-semibold">
+        <h2 className="text-[#0E90CF] sm:text-title text-[20px] font-normal">
           Explore Our Courses
         </h2>
 

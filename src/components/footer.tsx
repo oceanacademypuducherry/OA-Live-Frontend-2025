@@ -18,8 +18,8 @@ export const Footer = () => {
   return (
     <footer className="bg-[#003B57] text-white">
       {/* Newsletter */}
-      <div className="bg-sky-500">
-        <div className="max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 py-6 gap-6">
+      <div className="bg-primary">
+        <div className="max-w-[90%] lg:max-w-[79%] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 py-6 gap-6">
           {/* Left Section */}
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 text-white w-full text-center sm:text-left">
             <FaEnvelope className="w-8 h-8 shrink-0 mt-1" />
@@ -35,7 +35,7 @@ export const Footer = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col sm:flex-row w-full lg:w-auto items-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto items-center mt-2 gap-3 sm:gap-4">
             <input
               type="email"
               placeholder="Enter your email address"
@@ -192,6 +192,11 @@ export const Footer = () => {
                 <li>
                   <Link href="/career" className="hover:text-sky-400">
                     Career
+                  </Link>
+                </li>
+                 <li>
+                  <Link href="/faq" className="hover:text-sky-400">
+                  FAQ
                   </Link>
                 </li>
               </ul>

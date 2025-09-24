@@ -26,13 +26,13 @@ export const OurClients = () => {
         {/* Heading */}
         <h2
           id="our-clients-heading"
-          className="text-[20px] sm:text-3xl font-semibold text-[#0E90CF] mb-3"
+          className="text-[20px] sm:text-title font-normal text-[#0E90CF] mb-3"
         >
           Our Clients
         </h2>
 
         {/* Description */}
-        <p className="text-[14px] sm:text-[16px] text-gray-600 mb-10 leading-relaxed max-w-[25rem] sm:max-w-[33rem] mx-auto">
+        <p className="text-[14px] sm:text-[16px] text-secondary mb-10 leading-relaxed max-w-[25rem] sm:max-w-[33rem] mx-auto">
           Various Educational Institutes and Universities prefer our pioneering
           training methods for their students.
         </p>
