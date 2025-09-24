@@ -1,8 +1,8 @@
 import EXPERIENCE from './experience.svg';
 import STUDENT from './student.svg';
 import MERNSTACK from './MERN STACK 1.png';
-import NEXTBTN from './nextBtn.png';
-import PREVIOUSBTN from './previous.png';
+import NEXTBTN from './nextBtn.svg';
+import PREVIOUSBTN from './previous.svg';
 import TIMEDURATION from './timeduration.png';
 import CAREERGUIDANCE from './careerGuidance.svg';
 import ICONCROPPED from './icon-cropped.svg';

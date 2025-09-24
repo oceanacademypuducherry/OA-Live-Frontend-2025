@@ -1,6 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 export const CourseOptions = () => {
+  const router = useRouter(); // ✅ inside the component
+
   const courseOptions = [
     { label: "Most Popular", active: true },
     { label: "Full Stack", active: false },
@@ -20,6 +23,7 @@ export const CourseOptions = () => {
 
         <button
           type="button"
+          onClick={() => router.push("/courses")} // ✅ works now
           className="bg-[#11B3FE] border-none text-white py-[10px] px-[20px] rounded-[6px] sm:text-[14px] text-[12px] font-semibold"
         >
           View more
@@ -28,28 +32,34 @@ export const CourseOptions = () => {
 
       {/* Options */}
       <section
-        className="
-          flex sm:gap-[16px] gap-[8px] mt-[20px] 
-          overflow-x-auto scroll-smooth p-2
-          scrollbar-none
-          sm:overflow-visible
-        "
-      >
-        {courseOptions.map((course, index) => (
-          <button
-            key={index}
-            type="button"
-            className={`px-[10px] sm:px-[10px] md:px-[30px] py-[8px] rounded-[20px] font-medium text-[12px] sm:text-[14px] md:text-[16px] cursor-pointer transition flex-shrink-0
-              ${
-                course.active
-                  ? "bg-[#00AEFF] text-white"
-                  : "bg-[#FAFAFA] text-[#4B5563]"
-              }`}
-          >
-            {course.label}
-          </button>
-        ))}
-      </section>
+  className="
+    flex gap-2 sm:gap-4 mt-5
+    overflow-x-auto scroll-smooth p-0
+    scrollbar-thin scrollbar-thumb-gray-400 pb-2 scrollbar-track-gray-100
+    md:overflow-x-hidden
+  "
+>
+  {courseOptions.map((course, index) => (
+    <button
+      key={index}
+      type="button"
+      className={`
+        px-3 sm:px-4 lg:px-6 py-2
+        rounded-[20px] font-medium flex-shrink-0
+        cursor-pointer transition
+        text-xs sm:text-sm lg:text-base
+        ${
+          course.active
+            ? "bg-[#00AEFF] text-white"
+            : "bg-[#FAFAFA] text-[#4B5563]"
+        }
+      `}
+    >
+      {course.label}
+    </button>
+  ))}
+</section>
+
     </main>
   );
 };

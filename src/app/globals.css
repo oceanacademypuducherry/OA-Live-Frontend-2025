@@ -43,7 +43,7 @@ body {
 }
 
 .animate-vertical-scroll {
-  animation: vertical-scroll 20s linear infinite;
+  animation: vertical-scroll 40s linear infinite;
 }
 
 /* Pause animation on hover */

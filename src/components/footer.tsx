@@ -189,6 +189,11 @@ export const Footer = () => {
 </Link>
 
                 </li>
+                <li>
+                  <Link href="/career" className="hover:text-sky-400">
+                    Career
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -217,6 +222,11 @@ export const Footer = () => {
                     Verify Certificate
                   </Link>
                 </li>
+                <li>
+                  <Link href="/blog" className="hover:text-sky-400">
+                    Blog
+                  </Link>
+                </li>
               </ul>
 
               {/* Office Hours */}
@@ -227,10 +237,10 @@ export const Footer = () => {
                 <div className="mt-2 text-[14px] md:text-[16px] text-gray-200 leading-relaxed">
                   <div className="flex justify-center sm:justify-start items-center gap-2">
                     <FaClock className="text-[16px] md:text-[18px]" />
-                    <span>Monday – Saturday</span>
+                    <span>Monday – Sunday</span>
                   </div>
                   <div className="flex justify-center sm:justify-start items-center gap-2 mt-1">
-                    <span>9:30 AM – 8:00 PM</span>
+                    <span>9:30 AM – 9:00 PM</span>
                   </div>
                 </div>
               </div>

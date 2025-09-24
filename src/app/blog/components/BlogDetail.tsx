@@ -13,14 +13,14 @@ export const BlogDetail = ({ post, onBack }: BlogDetailProps) => {
       <div className="flex justify-start mb-6">
         <button
           onClick={onBack}
-          className="bg-[#00AEFF] text-white px-4 py-2 rounded-md hover:bg-white hover:text-[#00AEFF] hover:border hover:border-[#00AEFF] transition"
+          className="bg-primary text-white px-4 py-2 rounded-md hover:bg-white hover:text-primary  hover:border-primary border transition"
         >
           ← Back
         </button>
       </div>
 
       {/* Title stays left-aligned */}
-      <h1 className="sm:text-2xl text-[20px] font-bold mb-6 text-[#00AEFF]">
+      <h1 className="sm:text-2xl text-[20px] font-bold mb-6 text-primary">
         {post.title}
       </h1>
 
@@ -34,7 +34,7 @@ export const BlogDetail = ({ post, onBack }: BlogDetailProps) => {
       </div>
 
       {/* Content */}
-      <div className="text-gray-700 text-[14px] sm:text-[16px] leading-relaxed space-y-4">
+      <div className="text-secondary text-[14px] sm:text-[16px] leading-relaxed space-y-4">
         <p>
           With the rise in popularity of digital experiences such as how we are
           living, shopping, and communicating, front-end development has emerged

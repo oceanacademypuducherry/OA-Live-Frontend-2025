@@ -42,7 +42,7 @@ export const BlogPostsList = () => {
             <h3 className="font-semibold text-gray-900 text-[16px] sm:text-[18px] mb-2">
               {post.title}
             </h3>
-            <p className="text-gray-600 text-[14px] sm:text-[16px] mb-4 flex-grow">
+            <p className="text-secondary text-[14px] sm:text-[16px] mb-4 flex-grow">
               {post.description}
             </p>
           </div>
@@ -50,8 +50,8 @@ export const BlogPostsList = () => {
           <div className="p-4 pt-0">
             <button
               onClick={() => handleReadMore(post)}
-              className="bg-[#00AEFF] text-white px-4 py-2 rounded-md cursor-pointer w-full sm:w-auto 
-                hover:bg-white hover:text-[#00AEFF] hover:border hover:border-[#00AEFF]"
+              className="bg-primary text-white px-4 py-2 rounded-md cursor-pointer w-full sm:w-auto 
+                hover:bg-white hover:text-primary hover:border-primary border transition"
             >
               Read More
             </button>

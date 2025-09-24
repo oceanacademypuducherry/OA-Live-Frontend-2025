@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { AiFillPlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Script from "next/script"; // ✅ for JSON-LD SEO
+import Script from "next/script";
 import {
   CAREERGUIDANCE,
   ICON,
@@ -40,36 +40,37 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-t from-[#056f9c] to-[#189bd8] py-[50px] px-[16px] relative overflow-hidden">
+    <section className="bg-gradient-to-t from-[#056f9c] to-[#189bd8] sm:py-[30px] lg:py-[40px] 2xl:py-[70px] py-[20px] px-[6px] md:px-[50px] relative overflow-hidden">
       {/* Background Pattern */}
       <img
         src={TOPPATTERN.src}
         alt="dot pattern"
-        className="absolute top-0 right-[10px] h-[400px] w-[200px] opacity-70 z-0 object-cover text-[#ffffff]"
+        className="absolute top-0 right-[10px] h-[400px] w-[200px] opacity-70 z-0 object-cover"
       />
 
       {/* Content Wrapper */}
-      <div className="max-w-[1200px] mx-auto flex gap-[40px] items-center justify-center max-[1150px]:flex-col-reverse relative z-10">
-        {/* Left Content */}
-        <div className="text-white">
-          <h1 className="text-[30px] sm:text-[30px] md:text-[36px] font-bold leading-[1.375] text-[#ffffff] max-[1150px]:text-center">
+      <div className="max-w-[1700px] mx-auto flex flex-col xl:flex-row items-center justify-center gap-0 md:gap-[20px] xl:gap-[60px] relative z-10">
+
+        {/* Left Content (Text) */}
+        <div className="text-white xl:text-left  text-center xl:max-w-[40%] max-w-full order-2 xl:order-1">
+          <h1 className="text-[26px] md:text-[38px] font-bold leading-[1.375] mt-5 md:mt-0 sm:mt-5">
             Transforming Careers <br /> with Future-Ready Skills
           </h1>
-          <p className="mt-[16px] text-[13px] sm:text-[16px] max-w-[512px] text-[#ffffff] leading-[2] max-[1150px]:text-center">
+          <p className="mt-[16px] text-[15px] sm:text-[18px] max-w-[512px] md:max-w-[712px] mx-auto leading-[2]">
             Upgrade your career with industry-recognized online and offline
             courses in Puducherry. Learn from expert mentors, build real-world
             projects, and land your dream job in IT and software development.
           </p>
 
           {/* Highlights */}
-          <div className="flex flex-col text-[14px] sm:text-[16px] text-[#ffffff] max-[1150px]:items-center">
+          <div className="flex flex-col text-[15px] sm:text-[16px] mt-6 xl:items-start items-center">
             <div className="flex gap-[15px] mb-2">
               <p className="flex items-center gap-[8px]">
                 <img src={STUDENTCOUNT.src} alt="learned students" height={20} width={20} />
                 10000+ Students
               </p>
               <p className="flex items-center gap-[8px]">
-                <img src={SEMINARS.src} alt="Free seminars" height={20} width={20} />
+                <img src={SEMINARS.src} alt="Free seminars" height={18} width={18} />
                 75+ Free seminars
               </p>
             </div>
@@ -86,63 +87,66 @@ export const HeroSection = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="mt-[24px] bg-white text-[#00AEFF] px-[24px] py-[8px] rounded-[8px] font-bold hover:bg-[#F3F4F6] transition border-none max-[1150px]:flex max-[1150px]:justify-center">
-            Enroll Now
-          </button>
+          <div className="mt-[24px] flex sm:justify-center xl:justify-start justify-center">
+            <button className="bg-white text-primary px-[28px] py-[12px] rounded-[8px] font-bold hover:bg-[#F3F4F6] transition">
+              Enroll Now
+            </button>
+          </div>
         </div>
 
-        {/* Right Content (Video Card) */}
-        <section className="relative">
-          <div className="relative group w-fit">
-            {/* Video */}
-            <video
-              ref={videoRef}
-              className="h-[300px] rounded-[12px]"
-              loop={false}
-              muted
-              poster={OATHUMB.src}
-            >
-              <source src={REVIEW_VIDEO} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+        {/* Right Content (Video + Cards) */}
+        <div className="flex flex-col items-center order-1 xl:order-2 w-full xl:w-auto mt-8 xl:mt-0">
+          <div className="relative group w-fit rounded-[12px] overflow-hidden">
+  <video
+    ref={videoRef}
+    className="h-[220px] sm:h-[300px] md:h-[350px] lg:h-[380px] w-full object-cover"
+    muted
+    playsInline
+    preload="metadata"
+    controls={false}
+    poster={OATHUMB.src}
+  >
+    <source src={REVIEW_VIDEO} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 rounded-[12px] bg-black/40 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition duration-300 z-10" />
+  <div className="absolute inset-0 bg-black/40 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition duration-300 z-10" />
 
-            {/* Play / Pause Button */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition duration-300">
-              {!isPlaying ? (
-                <AiFillPlayCircle
-                  className="text-[#ffffff] text-[50px] cursor-pointer"
-                  onClick={handlePlay}
-                />
-              ) : (
-                <AiOutlinePauseCircle
-                  className="text-[#ffffff] text-[50px] cursor-pointer"
-                  onClick={handlePause}
-                />
-              )}
-            </div>
-          </div>
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+    {!isPlaying ? (
+      <AiFillPlayCircle
+        className="text-white text-[60px] cursor-pointer"
+        onClick={handlePlay}
+      />
+    ) : (
+      <AiOutlinePauseCircle
+        className="text-white text-[60px] cursor-pointer"
+        onClick={handlePause}
+      />
+    )}
+  </div>
+</div>
 
-          {/* Stats Below Video */}
-          <div className="mt-5 flex flex-wrap gap-[15px] justify-start absolute top-[290px] left-[-1px]">
+
+          {/* ✅ Cards below the video */}
+          <div className="mt-5 flex flex-wrap gap-[15px] justify-center xl:justify-start w-full">
             <div className="flex items-center rounded-[8px] px-[6px] py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-[#ffffff] h-[60px] w-[120px]">
               <img src={ICON.src} alt="students" className="h-[45px] w-[45px]" />
-              <p className="font-semibold">
+              <p className="font-semibold text-center">
                 <span className="text-black text-[16px]">10k+</span> <br />
-                <span className="text-gray-500 text-[13px] font-medium">Students</span>
+                <span className="text-secondary text-[13px] font-medium">Students</span>
               </p>
             </div>
+
             <div className="flex items-center rounded-[8px] px-[6px] py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-[#ffffff] h-[60px] w-[150px]">
               <img src={ICON.src} alt="students" className="h-[45px] w-[45px]" />
-              <p className="font-semibold">
+              <p className="font-semibold text-start">
                 <span className="text-black text-[16px]">75+</span> <br />
-                <span className="text-gray-500 font-medium text-[13px]">Free seminars</span>
+                <span className="text-secondary font-medium text-[13px]">Free seminars</span>
               </p>
             </div>
           </div>
-        </section>
+        </div>
       </div>
 
       {/* ✅ JSON-LD SEO Structured Data */}
@@ -166,8 +170,8 @@ export const HeroSection = () => {
             "addressLocality": "Puducherry",
             "addressRegion": "PY",
             "postalCode": "605001",
-            "addressCountry": "IN",
-          },
+            "addressCountry": "IN"
+          }
         })}
       </Script>
     </section>

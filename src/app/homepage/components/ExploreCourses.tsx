@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { CourseOptions } from "./CourseOption";
 import { MERNSTACK, NEXTBTN, PREVIOUSBTN, TIMEDURATION } from "@/assets";
 
@@ -10,14 +10,48 @@ import { MERNSTACK, NEXTBTN, PREVIOUSBTN, TIMEDURATION } from "@/assets";
 export const ExploreCourses = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const scroll = (direction: "next" | "prev") => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: direction === "next" ? 300 : -300,
-        behavior: "smooth",
-      });
-    }
+ 
+const [canScrollPrev, setCanScrollPrev] = useState(false);
+const [canScrollNext, setCanScrollNext] = useState(true);
+
+const scrollAmount = 300; // adjust to your card width
+
+const handleScroll = (direction: "next" | "prev") => {
+  if (scrollRef.current) {
+    const container = scrollRef.current;
+    const newScroll =
+      direction === "next"
+        ? container.scrollLeft + scrollAmount
+        : container.scrollLeft - scrollAmount;
+
+    container.scrollTo({ left: newScroll, behavior: "smooth" });
+  }
+};
+
+const updateScrollButtons = () => {
+  if (scrollRef.current) {
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+    setCanScrollPrev(scrollLeft > 0);
+    setCanScrollNext(scrollLeft + clientWidth < scrollWidth - 1);
+  }
+};
+
+useEffect(() => {
+  updateScrollButtons();
+  const container = scrollRef.current;
+  if (!container) return;
+
+  container.addEventListener("scroll", updateScrollButtons);
+  window.addEventListener("resize", updateScrollButtons);
+
+  return () => {
+    container.removeEventListener("scroll", updateScrollButtons);
+    window.removeEventListener("resize", updateScrollButtons);
   };
+}, []);
+
+
 
   const courses = [
     { id: 1, title: "Mernstack development" },
@@ -120,26 +154,43 @@ export const ExploreCourses = () => {
         </div>
 
         {/* Scroll Buttons → only visible on desktop */}
-        <div className="hidden md:flex justify-center mt-6 gap-6">
-          <button onClick={() => scroll("prev")}>
-            <Image
-              src={PREVIOUSBTN}
-              alt="Previous"
-              width={40}
-              height={40}
-              className="w-9 h-9 sm:w-10 sm:h-10"
-            />
-          </button>
-          <button onClick={() => scroll("next")}>
-            <Image
-              src={NEXTBTN}
-              alt="Next"
-              width={40}
-              height={40}
-              className="w-9 h-9 sm:w-10 sm:h-10"
-            />
-          </button>
-        </div>
+       <div className="hidden md:flex justify-center mt-6 gap-6">
+  {/* Prev Button */}
+  <button
+    onClick={() => handleScroll("prev")}
+    disabled={!canScrollPrev}
+    className={`transition ${
+      !canScrollPrev ? "opacity-30 cursor-not-allowed" : "opacity-100"
+    }`}
+  >
+    <Image
+      src={PREVIOUSBTN}
+      alt="Previous"
+      width={40}
+      height={40}
+      className="w-9 h-9 sm:w-10 sm:h-10"
+    />
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={() => handleScroll("next")}
+    disabled={!canScrollNext}
+    className={`transition ${
+      !canScrollNext ? "opacity-30 cursor-not-allowed" : "opacity-100"
+    }`}
+  >
+    <Image
+      src={NEXTBTN}
+      alt="Next"
+      width={40}
+      height={40}
+      className="w-9 h-9 sm:w-10 sm:h-10"
+    />
+  </button>
+</div>
+
+
       </section>
     </main>
   );
