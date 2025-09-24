@@ -1,4 +1,3 @@
-
 import { Imag1, Imag2, Imag3 } from "@/assets/service";
 import {
   GraduationCap,
@@ -39,6 +38,7 @@ export interface AdvancedService {
   features: string[];
   gradient: string;
   bgColor: string;
+  textColor: string;
   iconColor: string;
   popular?: boolean;
 }
@@ -239,6 +239,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-50",
+    textColor: "group-hover:text-blue-500",
     iconColor: "bg-blue-500",
     popular: true,
   },
@@ -256,6 +257,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-emerald-500 to-teal-500",
     bgColor: "bg-emerald-50",
+    textColor: "group-hover:text-emerald-500",
     iconColor: "bg-emerald-500",
   },
   {
@@ -272,6 +274,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-purple-500 to-indigo-500",
     bgColor: "bg-purple-50",
+    textColor: "group-hover:text-purple-500",
     iconColor: "bg-purple-500",
   },
   {
@@ -288,6 +291,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-orange-500 to-red-500",
     bgColor: "bg-orange-50",
+    textColor: "group-hover:text-orange-500",
     iconColor: "bg-orange-500",
   },
   {
@@ -303,6 +307,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-pink-500 to-rose-500",
     bgColor: "bg-pink-50",
+    textColor: "group-hover:text-pink-500",
     iconColor: "bg-pink-500",
   },
   {
@@ -318,6 +323,7 @@ export const advancedServices: AdvancedService[] = [
     ],
     gradient: "from-cyan-500 to-blue-500",
     bgColor: "bg-cyan-50",
+    textColor: "group-hover:text-cyan-500",
     iconColor: "bg-cyan-500",
   },
 ];

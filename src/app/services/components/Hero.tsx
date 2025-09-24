@@ -11,7 +11,7 @@ export function Hero() {
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
           {/* Heading */}
-          <h1 className="text-3xl sm:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
             OUR{" "}
             <span className="bg-[linear-gradient(to_right,#00AEFF,#034E72)] bg-clip-text text-transparent">
               SERVICES
@@ -19,7 +19,7 @@ export function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-md sm:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+          <p className="text-base sm:text-md lg:text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             Empowering IT Careers & Businesses Through career-focused courses
             and real-time software development services, delivered online PAN
             India and offline in Puducherry.
@@ -30,7 +30,7 @@ export function Hero() {
             {taglines.map((tagline, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 border border-gray-200 h-full min-h-[200px] flex flex-col items-center text-center"
+                className="bg-white hover:sm:shadow-2xl hover:shadow-lg rounded-2xl p-6 border border-gray-200 h-full min-h-[200px] flex flex-col items-center text-center"
               >
                 <tagline.icon className={`w-8 h-8 ${tagline.color} mb-3`} />
                 <h3 className="font-semibold text-gray-800 mb-2">

@@ -1,6 +1,12 @@
-import { COLLEGE_INVITES_GALLERY, IWCCT_GALLERY, LEGACY_GALLERY, SFM_GALLERY, TECHFEST_GALLERY, THIRU_SPOKEN } from "@/assets";
+import {
+  COLLEGE_INVITES_GALLERY,
+  IWCCT_GALLERY,
+  LEGACY_GALLERY,
+  SFM_GALLERY,
+  TECHFEST_GALLERY,
+  THIRU_SPOKEN,
+} from "@/assets";
 import { Album, GalleryData, Image } from "./types";
-
 
 // Mock image data - replace with your actual images
 const generateMockImages = (category: string, count: number): Image[] => {
@@ -47,7 +53,7 @@ export const OCEAN_ALBUMS: Album[] = [
   {
     id: "1",
     images: TECHFEST_GALLERY,
-    thumbnail: TECHFEST_GALLERY[1].src,
+    thumbnail: TECHFEST_GALLERY[8].src,
     title: "TechFest 2025",
     description: "Memorable event",
   },

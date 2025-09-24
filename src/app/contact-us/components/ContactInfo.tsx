@@ -1,11 +1,10 @@
 import React from "react";
 import { contactDetails } from "../data/contactdata";
 
-
 export function ContactInfo() {
   return (
     <div className="bg-white rounded-2xl sm:shadow-lg p-2 sm:p-8">
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#034E72] mb-8">
+      <h2 className="text-xl sm:text-2xl font-bold text-[#034E72] mb-8">
         Get In Touch
       </h2>
       <div className="space-y-8">
@@ -13,7 +12,7 @@ export function ContactInfo() {
           const Icon = item.icon;
           return (
             <div key={index} className="flex items-start space-x-4">
-              <div className="text-[#00AEFF] bg-blue-50 p-3 rounded-lg">
+              <div className="text-[#00AEFF] bg-blue-50 hover:bg-blue-100 p-3 rounded-lg">
                 <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
               <div>

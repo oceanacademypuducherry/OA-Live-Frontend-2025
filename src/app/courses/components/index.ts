@@ -9,3 +9,4 @@ export { CourseSidebar } from "./CourseSidebar";
 export { DetailedCourseCta } from "./DetailedCourseCta";
 export { GeneralTools } from "./GeneralTools";
 export { ReviewSection } from "./ReviewSection";
+export { CourseCardSkeleton } from "./CourseCardSkeleton";

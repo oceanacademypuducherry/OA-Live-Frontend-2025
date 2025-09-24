@@ -13,7 +13,7 @@ export function CTA() {
           online PAN-India.
         </p>
 
-        <button className="bg-white text-[#00AEFF] px-4 sm:px-8 py-4 rounded-full font-semibold">
+        <button className="bg-white text-[#00AEFF] px-4 sm:px-8 py-4 rounded-full font-semibold shadow-md transition-all duration-300 hover:bg-[#00AEFF] hover:text-white hover:shadow-lg hover:scale-105">
           Get Started Today
         </button>
       </div>

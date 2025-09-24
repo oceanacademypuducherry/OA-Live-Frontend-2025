@@ -1,37 +1,73 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 import { CourseCard } from "./CourseCard";
-import { Course, coursesdata } from "../data/courseData";
+import { Course } from "../data/courseData"; // type only
+import { fetchCourses } from "@/app/api/courseApi";
+import { CourseCardSkeleton } from "./CourseCardSkeleton";
 
-export const CourseCategory = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Most popular");
-  const [isOpen, setIsOpen] = useState(false);
+interface CourseCategoryProps {
+  searchQuery: string;
+}
+
+export const CourseCategory: React.FC<CourseCategoryProps> = ({
+  searchQuery,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [allCourses, setAllCourses] = useState<Course[]>([]);
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); // mobile dropdown
 
   const categories = [
+    "All",
     "Most popular",
-    "Full stack",
-    "Frontend",
+    "Fullstack",
+    "frontend",
     "Backend",
-    "Mobile",
     "Design",
   ];
 
-  // Filter logic
-  const filteredCourses: Course[] =
-    selectedCategory === "Most popular"
-      ? coursesdata // show all for "Most popular"
-      : coursesdata.filter(
-          (course) =>
-            course.category.toLowerCase() === selectedCategory.toLowerCase()
-        );
+  // Fetch courses from backend
+  useEffect(() => {
+    const loadCourses = async () => {
+      setLoading(true);
+      try {
+        const res = await fetchCourses(searchQuery);
+        setAllCourses(res.courses || []); // Use the courses array
+      } catch (error) {
+        console.error("Failed to fetch courses:", error);
+        setAllCourses([]);
+      }
+      setLoading(false);
+    };
+    loadCourses();
+  }, [searchQuery]);
+
+  // Apply category filter
+  useEffect(() => {
+    let filtered = [...allCourses];
+
+    if (selectedCategory === "Most popular") {
+      filtered = filtered.slice(0, 9); // first 9 courses from backend
+    } else if (selectedCategory !== "All") {
+      filtered = filtered.filter(
+        (course) =>
+          course.category?.toLowerCase() === selectedCategory.toLowerCase()
+      );
+    }
+
+    setCourses(filtered);
+  }, [selectedCategory, allCourses]);
+
+  const skeletonCount = 6;
 
   return (
     <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Category Buttons (Desktop/Tablet) */}
+        {/* Desktop Buttons */}
         <div className="hidden sm:flex flex-wrap gap-2 justify-center mb-8">
           {categories.map((category) => (
             <button
@@ -49,21 +85,21 @@ export const CourseCategory = () => {
         </div>
 
         {/* Mobile Dropdown */}
-        <div className="relative sm:hidden flex justify-center mb-8">
+        <div className="relative sm:hidden mb-6 w-full max-w-xs mx-auto">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full max-w-xs flex items-center justify-between px-4 py-3 rounded-full bg-[#00AEFF] text-white font-medium shadow-md transition"
+            className="w-full flex justify-between items-center px-4 py-3 bg-[#00AEFF] text-white rounded-lg shadow-sm"
           >
-            {selectedCategory}
+            <span>{selectedCategory}</span>
             <ChevronDown
-              className={`ml-2 h-5 w-5 transition-transform ${
+              className={`w-5 h-5 transition-transform ${
                 isOpen ? "rotate-180" : ""
               }`}
             />
           </button>
 
           {isOpen && (
-            <div className="absolute top-full mt-2 w-full max-w-xs bg-white border rounded-xl shadow-lg overflow-hidden z-10">
+            <div className="absolute z-10 w-full bg-white  rounded-lg shadow-lg mt-2">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -71,10 +107,10 @@ export const CourseCategory = () => {
                     setSelectedCategory(category);
                     setIsOpen(false);
                   }}
-                  className={`w-full text-left px-4 py-3 transition ${
+                  className={`block w-full text-left px-4 py-2 ${
                     selectedCategory === category
-                      ? "bg-[#00AEFF] text-white"
-                      : "text-gray-700 hover:bg-[#E6F7FF]"
+                      ? "bg-blue-100 text-[#00AEFF] font-medium"
+                      : "hover:bg-gray-100"
                   }`}
                 >
                   {category}
@@ -85,9 +121,14 @@ export const CourseCategory = () => {
         </div>
 
         {/* Courses Grid */}
+        {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCourses.length > 0 ? (
-            filteredCourses.map((course) => (
+          {loading ? (
+            Array.from({ length: skeletonCount }).map((_, idx) => (
+              <CourseCardSkeleton key={idx} />
+            ))
+          ) : courses.length > 0 ? (
+            courses.map((course) => (
               <CourseCard
                 key={course.courseId}
                 course={course}

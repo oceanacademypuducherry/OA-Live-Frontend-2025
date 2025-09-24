@@ -9,7 +9,6 @@ import { TextAreaField } from "./TextAreaField";
 import { contactSchema } from "../data/validationschema";
 import { formFields } from "../data/formfields";
 
-
 interface FormData {
   Name: string;
   email: string;
@@ -35,7 +34,7 @@ export function ContactForm() {
 
   return (
     <div className="bg-white rounded-2xl sm:shadow-lg p-2 sm:p-8">
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#034E72] mb-2">
+      <h2 className="text-xl sm:text-2xl font-bold text-[#034E72] mb-2">
         Send us a Message
       </h2>
       <p className="text-gray-600 mb-8">
