@@ -40,11 +40,11 @@ const purposes: PurposeItem[] = [
 export const OurPurpose = () => {
   return (
     <section className="bg-gray-50 py-10 px-4 sm:px-6">
-      <h2 className="text-center text-[20px] sm:text-[24px] md:text-[24px] font-semibold text-primary mb-6">
+      <h2 className="text-center text-[20px] sm:text-[24px] md:text-[24px] font-semibold bg-gradient-to-r from-primary via-primary to-black bg-clip-text text-transparent  mb-6">
         Our Purpose
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6  2xl:max-w-[1024px] xl:max-w-[950px] lg:max-w-[850px] md:max-w-[750px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16  2xl:max-w-[1024px] xl:max-w-[950px] lg:max-w-[850px] md:max-w-[750px] mx-auto">
         {purposes.map((item, i) => (
           <div
             key={i}

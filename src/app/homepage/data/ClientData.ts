@@ -1,4 +1,4 @@
-import { ADHIPARASAKTHI, CK, MIT, PANIMALAR, PU, SMVC } from "@/assets";
+import { ADHIPARASAKTHI, ANNES, CK, MIT, PANIMALAR, PU, RAAK, SMVC, TACW } from "@/assets";
 
 export interface Client {
   name: string;
@@ -28,8 +28,26 @@ export const clients: Client[] = [
     name: "Panimalar Institute",
     logo: PANIMALAR,
   },
+  // {
+  //   name: "CK college",
+  //   logo: CK,
+  // },  
+
   {
+    name: "theivanai ammal college for women",
+    logo: TACW,
+  },
+   {
+    name: "theivanai ammal college for women",
+    logo: RAAK,
+  },
+   {
+    name: "st.annes college of engineering and technology",
+    logo: ANNES,
+  },
+   {
     name: "CK college",
     logo: CK,
   },  
+  
 ];

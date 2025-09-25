@@ -21,16 +21,12 @@ export const ExploreCourses = () => {
         : container.scrollLeft - scrollAmount;
 
     container.scrollTo({ left: newScroll, behavior: "smooth" });
-
-    // Delay updating scroll buttons slightly to allow smooth scroll
     setTimeout(updateScrollButtons, 200);
   };
 
   const updateScrollButtons = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-
-    // Use a small threshold to prevent rounding issues
     const threshold = 5;
 
     setCanScrollPrev(scrollLeft > threshold);
@@ -61,15 +57,17 @@ export const ExploreCourses = () => {
 
   return (
     <main className="mt-[30px] max-w-[1200px] mx-auto px-4">
+      {/* Course options */}
       <CourseOptions />
 
-      <section className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex items-center">
-        {/* Prev Button */}
+      {/* Carousel section */}
+      <section className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col items-center">
+        {/* Prev Button (only visible on >=1536px at the left side) */}
         <button
           onClick={() => handleScroll("prev")}
           disabled={!canScrollPrev}
-          className={`hidden md:flex absolute top-1/2 -left-10 -translate-y-1/2 z-10
-            w-10 h-10 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
+          className={`hidden 2xl:flex absolute top-1/2 left-[-72] -translate-y-1/2 z-10
+            w-14 h-14 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
             ${!canScrollPrev ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
         >
           <Image src={PREVIOUSBTN} alt="Previous" width={80} height={80} />
@@ -78,26 +76,26 @@ export const ExploreCourses = () => {
         {/* Scrollable cards */}
         <div
           ref={scrollRef}
-          className="
-            flex gap-4 sm:gap-5 md:gap-6
-            scroll-smooth overflow-x-auto md:overflow-x-hidden
-            scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100
-            md:scrollbar-none
-          "
+          className="flex gap-4 sm:gap-5 md:gap-12 scroll-smooth overflow-x-auto md:overflow-x-hidden
+            scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 md:scrollbar-none p-6 w-full "
         >
           {courses.map((course) => (
             <div
               key={course.id}
-              className="w-[220px] sm:w-[240px] md:w-[260px] lg:w-[300px] xl:w-[320px]
-                bg-white rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.1)]
-                flex-shrink-0"
+              className="w-[300px] sm:w-[300px] md:w-[300px] lg:w-[320px] xl:w-[320px]
+              bg-white rounded-[12px] border-[3px] border-transparent overflow-hidden
+              shadow-[0_4px_12px_rgba(0,0,0,0.1)] flex-shrink-0
+              transition-all duration-300
+              hover:shadow-[0_8px_20px_rgba(0,0,0,0.25)]
+              hover:scale-[1.02]
+              hover:z-10"
             >
               <Image
                 src={MERNSTACK}
                 alt="Course"
-                className="w-full h-[150px] sm:h-[170px] md:h-[180px] lg:h-[200px] object-contain rounded-t-[12px]"
+                className="w-full h-[170px] lg:h-[170px] object-contain"
               />
-              <div className="p-3 sm:p-4 bg-[#F9FDFF]">
+              <div className="p-3 sm:p-4 ">
                 <p className="block md:hidden px-2 py-1 mb-2 bg-[#0E90CF] text-white rounded-[6px] text-[12px] font-semibold w-fit leading-5">
                   Beginner to advanced
                 </p>
@@ -141,16 +139,36 @@ export const ExploreCourses = () => {
           ))}
         </div>
 
-        {/* Next Button */}
+        {/* Next Button (only visible on >=1536px at the right side) */}
         <button
           onClick={() => handleScroll("next")}
           disabled={!canScrollNext}
-          className={`hidden md:flex absolute top-1/2 -right-10 -translate-y-1/2 z-10
-            w-10 h-10 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
+          className={`hidden 2xl:flex absolute top-1/2 right-[-72] -translate-y-1/2 z-10
+            w-14 h-14 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
             ${!canScrollNext ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
         >
           <Image src={NEXTBTN} alt="Next" width={80} height={80} />
         </button>
+
+        {/* Buttons below cards for <1536px (tablet + mobile) */}
+        <div className="w-full flex justify-center gap-6 mt-6  2xl:hidden max-sm:hidden">
+          <button
+            onClick={() => handleScroll("prev")}
+            disabled={!canScrollPrev}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition hover:scale-105 hover:shadow-lg
+              ${!canScrollPrev ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
+          >
+            <Image src={PREVIOUSBTN} alt="Previous" width={60} height={60} />
+          </button>
+          <button
+            onClick={() => handleScroll("next")}
+            disabled={!canScrollNext}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition hover:scale-105 hover:shadow-lg
+              ${!canScrollNext ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
+          >
+            <Image src={NEXTBTN} alt="Next" width={60} height={60} />
+          </button>
+        </div>
       </section>
     </main>
   );
