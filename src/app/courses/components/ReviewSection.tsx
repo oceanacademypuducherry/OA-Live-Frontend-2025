@@ -25,7 +25,7 @@ export const ReviewSection = () => {
         </div>
 
         {/* Swiper */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto z-10">
           <Swiper
             modules={[EffectCoverflow, Pagination, Autoplay]}
             effect="coverflow"

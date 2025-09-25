@@ -1,3 +1,4 @@
+"use client";
 import { Navbar, Footer } from "@/components";
 import {
   Awards,

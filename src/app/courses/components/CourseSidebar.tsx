@@ -1,13 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { CheckCircle, Download } from "lucide-react";
 import { Course } from "../data/courseData";
+import { DownloadCourseModal } from "./DownloadCourseModal";
 
 interface CourseSidebarProps {
   course: Course;
 }
 
 export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="space-y-6 sticky top-6">
       {/* Pricing Card */}
@@ -33,9 +35,20 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
         <button className="w-full py-4 bg-[#00AEFF] hover:bg-[#034E72] text-white font-bold rounded-lg transition-all duration-200 mb-4 text-lg">
           Enroll Now
         </button>
-        <button className="w-full flex items-center justify-center gap-2 py-4 bg-[#00AEFF]/10 bg-opacity-10 text-[#00AEFF] font-semibold rounded-lg transition-all duration-200 mb-4 text-lg">
+        <button
+          className="w-full flex items-center justify-center gap-2 py-4 bg-[#00AEFF]/10 bg-opacity-10 text-[#00AEFF] font-semibold rounded-lg transition-all duration-200 mb-4 text-lg"
+          onClick={() => setIsModalOpen(true)}
+        >
           <Download size={20} /> Download PDF
         </button>
+        <DownloadCourseModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          // courseName={course.courseName}
+          // courseId={course.id}
+          courseName="Frontend development" // dynamic name
+          courseId="OCNFREN"
+        />
       </div>
 
       {/* What You’ll Learn */}
