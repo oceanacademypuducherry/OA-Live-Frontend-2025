@@ -5,9 +5,9 @@
 
 
 
-import { MeetOurTeam } from "./components/MeetOurTeam";
+// import { MeetOurTeam } from "./components/MeetOurTeam";
 
-import { AboutOceanAcademy, OurPurpose } from "./components";
+import { AboutOceanAcademy, MeetOurTeam, OurPurpose } from "./components";
 import { Footer, Navbar } from "@/components";
 
 // import Navbar from "./common/Navbar";

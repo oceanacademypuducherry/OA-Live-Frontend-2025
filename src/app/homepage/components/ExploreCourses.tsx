@@ -7,31 +7,34 @@ import { MERNSTACK, NEXTBTN, PREVIOUSBTN, TIMEDURATION } from "@/assets";
 
 export const ExploreCourses = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
 
-  const scrollAmount = 300; // adjust to your card width
+  const scrollAmount = 300;
 
   const handleScroll = (direction: "next" | "prev") => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const newScroll =
-        direction === "next"
-          ? container.scrollLeft + scrollAmount
-          : container.scrollLeft - scrollAmount;
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const newScroll =
+      direction === "next"
+        ? container.scrollLeft + scrollAmount
+        : container.scrollLeft - scrollAmount;
 
-      container.scrollTo({ left: newScroll, behavior: "smooth" });
-    }
+    container.scrollTo({ left: newScroll, behavior: "smooth" });
+
+    // Delay updating scroll buttons slightly to allow smooth scroll
+    setTimeout(updateScrollButtons, 200);
   };
 
   const updateScrollButtons = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
 
-      setCanScrollPrev(scrollLeft > 0);
-      setCanScrollNext(scrollLeft + clientWidth < scrollWidth - 1);
-    }
+    // Use a small threshold to prevent rounding issues
+    const threshold = 5;
+
+    setCanScrollPrev(scrollLeft > threshold);
+    setCanScrollNext(scrollLeft + clientWidth < scrollWidth - threshold);
   };
 
   useEffect(() => {
@@ -58,11 +61,21 @@ export const ExploreCourses = () => {
 
   return (
     <main className="mt-[30px] max-w-[1200px] mx-auto px-4">
-      {/* Buttons / Course Options */}
       <CourseOptions />
 
-      {/* Horizontal Scroll Section */}
-      <section className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+      <section className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex items-center">
+        {/* Prev Button */}
+        <button
+          onClick={() => handleScroll("prev")}
+          disabled={!canScrollPrev}
+          className={`hidden md:flex absolute top-1/2 -left-10 -translate-y-1/2 z-10
+            w-10 h-10 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
+            ${!canScrollPrev ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
+        >
+          <Image src={PREVIOUSBTN} alt="Previous" width={80} height={80} />
+        </button>
+
+        {/* Scrollable cards */}
         <div
           ref={scrollRef}
           className="
@@ -75,37 +88,26 @@ export const ExploreCourses = () => {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="
-                w-[220px] sm:w-[240px] md:w-[260px] lg:w-[300px] xl:w-[320px]
+              className="w-[220px] sm:w-[240px] md:w-[260px] lg:w-[300px] xl:w-[320px]
                 bg-white rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.1)]
-                flex-shrink-0
-              "
+                flex-shrink-0"
             >
               <Image
                 src={MERNSTACK}
                 alt="Course"
                 className="w-full h-[150px] sm:h-[170px] md:h-[180px] lg:h-[200px] object-contain rounded-t-[12px]"
               />
-
-              {/* Content */}
               <div className="p-3 sm:p-4 bg-[#F9FDFF]">
-                {/* Level (mobile only) */}
                 <p className="block md:hidden px-2 py-1 mb-2 bg-[#0E90CF] text-white rounded-[6px] text-[12px] font-semibold w-fit leading-5">
                   Beginner to advanced
                 </p>
-
-                {/* Heading */}
                 <h3 className="text-[15px] sm:text-[16px] font-semibold mb-2 leading-snug">
                   {course.title}
                 </h3>
-
-                {/* Description */}
                 <p className="text-[13px] sm:text-[14px] text-[#939191] leading-6 mb-2">
                   The MERN stack is a popular technology stack used for building
                   web applications. It consists of nodejs, mongodb, express...
                 </p>
-
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4 mt-4">
                   <span className="px-2 py-1 bg-[#d4f1ff] text-[#0E90CF] text-[12px] rounded-[8px] font-semibold leading-5">
                     React js
@@ -117,24 +119,15 @@ export const ExploreCourses = () => {
                     Mongo DB
                   </span>
                 </div>
-
-                {/* Duration & Level (desktop only) */}
                 <div className="flex items-center justify-between text-[12px] text-gray-500 mb-4 leading-5">
                   <p className="flex items-center gap-1.5 bg-white px-2 py-1 rounded-[6px]">
-                    <Image
-                      src={TIMEDURATION}
-                      alt="time"
-                      width={16}
-                      height={16}
-                    />
+                    <Image src={TIMEDURATION} alt="time" width={16} height={16} />
                     6 months
                   </p>
                   <p className="hidden md:block px-2 py-1 bg-[#F3F3F4] text-[#695F5F] rounded-[6px] leading-5">
                     Beginner to advanced
                   </p>
                 </div>
-
-                {/* Price & Button */}
                 <div className="flex items-center justify-between leading-6">
                   <p className="text-[18px] sm:text-[20px] bg-gradient-to-r from-[#00AEFF] to-[#006899] bg-clip-text text-transparent font-semibold">
                     ₹ 32000
@@ -148,42 +141,16 @@ export const ExploreCourses = () => {
           ))}
         </div>
 
-        {/* Scroll Buttons → only visible on desktop */}
-        <div className="hidden md:flex justify-center mt-6 gap-6">
-          {/* Prev Button */}
-          <button
-            onClick={() => handleScroll("prev")}
-            disabled={!canScrollPrev}
-            className={`transition ${
-              !canScrollPrev ? "opacity-30 cursor-not-allowed" : "opacity-100"
-            }`}
-          >
-            <Image
-              src={PREVIOUSBTN}
-              alt="Previous"
-              width={40}
-              height={40}
-              className="w-9 h-9 sm:w-10 sm:h-10"
-            />
-          </button>
-
-          {/* Next Button */}
-          <button
-            onClick={() => handleScroll("next")}
-            disabled={!canScrollNext}
-            className={`transition ${
-              !canScrollNext ? "opacity-30 cursor-not-allowed" : "opacity-100"
-            }`}
-          >
-            <Image
-              src={NEXTBTN}
-              alt="Next"
-              width={40}
-              height={40}
-              className="w-9 h-9 sm:w-10 sm:h-10"
-            />
-          </button>
-        </div>
+        {/* Next Button */}
+        <button
+          onClick={() => handleScroll("next")}
+          disabled={!canScrollNext}
+          className={`hidden md:flex absolute top-1/2 -right-10 -translate-y-1/2 z-10
+            w-10 h-10 rounded-full items-center justify-center transition hover:scale-105 hover:shadow-lg
+            ${!canScrollNext ? "opacity-30 cursor-not-allowed" : "opacity-100"}`}
+        >
+          <Image src={NEXTBTN} alt="Next" width={80} height={80} />
+        </button>
       </section>
     </main>
   );
