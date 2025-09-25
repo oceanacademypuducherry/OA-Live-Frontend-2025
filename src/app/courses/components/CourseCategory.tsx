@@ -36,7 +36,7 @@ export const CourseCategory: React.FC<CourseCategoryProps> = ({
       setLoading(true);
       try {
         const res = await fetchCourses(searchQuery);
-        setAllCourses(res.courses || []); // Use the courses array
+        setAllCourses(res || []); // Use the courses array
       } catch (error) {
         console.error("Failed to fetch courses:", error);
         setAllCourses([]);
