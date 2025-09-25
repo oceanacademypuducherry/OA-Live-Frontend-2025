@@ -45,10 +45,10 @@ export const Awards = () => {
   return (
     <section className="bg-[#F0F8FF] py-[50px]">
       <main className="max-w-[1200px] mx-auto text-center">
-        <h2 className="text-[#0E90CF] text-[20px] sm:text-[30px] font-semibold">
+        <h2 className="text-[#0E90CF] text-[20px] sm:text-title font-normal">
           Awards & Recognition
         </h2>
-        <p className="text-gray-600 max-[700px]:text-[16px] max-[500px]:text-[14px]">
+        <p className="text-secondary max-[700px]:text-[16px] max-[500px]:text-[14px]">
           We are proud to be recognized by leading institutions for our
           excellence and reputation.
         </p>

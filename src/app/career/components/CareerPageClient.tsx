@@ -9,11 +9,11 @@ export const CareerPageClient=()=> {
   return (
     <div className="text-gray-800 w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ocean-blue to-ocean-sky text-center py-4 px-0 sm:px-4 sm:py-6">
-        <h1 className="text-2xl sm:text-4xl font-semibold text-ocean-white mb-2">
+      <section className="bg-gradient-to-r from-[#034E72] to-primary text-center py-4 px-0 sm:px-4 sm:py-6">
+        <h1 className="text-2xl sm:text-title font-medium text-ocean-white mb-2">
           Career
         </h1>
-        <h2 className="text-lg sm:text-2xl font-semibold text-ocean-yellow">
+        <h2 className="text-lg sm:text-2xl font-medium text-ocean-yellow">
           Join Our Incredible Team
         </h2>
         <p className="mt-2 text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-ocean-white">
@@ -26,20 +26,20 @@ export const CareerPageClient=()=> {
       {/* Job Section */}
       <section className="px-4 py-8 md:py-12 space-y-6 max-w-[1500px] mx-auto ">
         {/* Apply Info Card */}
-        <div className="bg-ocean-skyblue rounded-xl border border-ocean-sky p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="bg-ocean-skyblue rounded-xl border border-primary p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
-            <p className="text-sm md:text-base text-[#1F2937]">
-              <span className="block text-ocean-sky font-medium mb-1 text-base md:text-lg">
+            <p className="text-sm md:text-base text-secondary">
+              <span className="block text-primary font-medium mb-1 text-base md:text-lg">
                 How To Apply?
               </span>
               If you’re interested in a role and are willing to commit to staying
               in Pondicherry for a minimum of 12 months
             </p>
           </div>
-          <div className="flex flex-col md:items-end gap-1 text-sm md:text-base text-gray-600">
+          <div className="flex flex-col md:items-end gap-1 text-sm md:text-base text-secondary">
             <a
               href="mailto:oceandocuments@gmail.com"
-              className="text-ocean-sky font-medium underline"
+              className="text-primary font-medium underline"
             >
               oceandocuments@gmail.com
             </a>
@@ -62,20 +62,20 @@ export const CareerPageClient=()=> {
               <div
                 className={`border rounded-lg shadow transition-all duration-300 overflow-hidden ${
                   selectedJob === job.id
-                    ? "bg-ocean-skyblue border-ocean-sky p-6"
+                    ? "bg-ocean-skyblue border-primary p-6"
                     : "border-gray-200 p-4 hover:bg-gray-50"
                 }`}
               >
                 {/* Summary always visible */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                   <div>
-                    <p className="text-[16px] sm:text-base text-ocean-sky font-medium">
+                    <p className="text-[16px] sm:text-base text-primary font-medium">
                       {job.category}
                     </p>
                     <h3
                       className={`font-bold ${
                         selectedJob === job.id
-                          ? "text-lg text-ocean-sky"
+                          ? "text-lg text-primary"
                           : "text-lg text-gray-800"
                       }`}
                     >
@@ -97,14 +97,14 @@ export const CareerPageClient=()=> {
                 >
                   <div className="mt-4">
                     <h4 className="font-semibold mb-1">Description:</h4>
-                    <p className="text-sm sm:text-base text-gray-700">
+                    <p className="text-sm sm:text-base text-secondary">
                       {job.description}
                     </p>
                   </div>
 
                   <div className="mt-4">
                     <h4 className="font-semibold mb-1">Key Responsibilities:</h4>
-                    <ul className="list-disc ml-6 text-sm sm:text-base text-gray-700 space-y-1">
+                    <ul className="list-disc ml-6 text-sm sm:text-base text-secondary space-y-1">
                       {job.responsibilities.map((res, idx) => (
                         <li key={idx}>{res}</li>
                       ))}
@@ -113,7 +113,7 @@ export const CareerPageClient=()=> {
 
                   <div className="mt-4">
                     <h4 className="font-semibold mb-1">Requirements:</h4>
-                    <ul className="list-disc ml-6 text-sm sm:text-base text-gray-700 space-y-1">
+                    <ul className="list-disc ml-6 text-sm sm:text-base text-secondary space-y-1">
                       {job.requirements.map((req, idx) => (
                         <li key={idx}>{req}</li>
                       ))}
@@ -122,7 +122,7 @@ export const CareerPageClient=()=> {
 
                   <div className="mt-4">
                     <h4 className="font-semibold mb-1">Benefits:</h4>
-                    <ul className="list-disc ml-6 text-sm sm:text-base text-gray-700 space-y-1">
+                    <ul className="list-disc ml-6 text-sm sm:text-base text-secondary space-y-1">
                       {job.benefits.map((ben, idx) => (
                         <li key={idx}>{ben}</li>
                       ))}

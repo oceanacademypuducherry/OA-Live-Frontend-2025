@@ -48,7 +48,7 @@
 //                 className={`px-4 py-2 rounded border transition-all text-sm sm:text-base
 //                   ${
 //                     activeCategory === index
-//                       ? "bg-sky-100 text-sky-500 border-sky-500"
+//                       ? "bg-sky-100 text-primary border-sky-500"
 //                       : "bg-white text-sky-500 border-sky-500 hover:bg-sky-100"
 //                   }`}
 //               >
@@ -129,9 +129,9 @@
 import { useState } from "react";
 import { faqData } from "@/app/faq/data/faqdata";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+
 import Script from "next/script";
+import { Footer, Navbar } from "@/components";
 
 // ✅ SEO Metadata
 export const page = {
@@ -170,10 +170,10 @@ export default function FAQPage() {
       <main>
         {/* Header */}
         <section className="bg-gradient-to-r from-[#2E81A9] to-[#00AEFF] text-center py-10 px-4">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-medium text-white">
             Frequently Asked <span className="text-[#FDCE5C]">Questions</span>
           </h1>
-          <p className="mt-2 text-white text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="mt-2 text-white text-[16px] sm:text-[18px] max-w-2xl mx-auto">
             Find quick answers to common questions about Ocean Academy courses,
             pricing, certificates, and more. Can’t find what you’re looking for?
             Contact our support team.
@@ -196,8 +196,8 @@ export default function FAQPage() {
                     className={`px-4 py-2 rounded border transition-all text-sm sm:text-base
                       ${
                         activeCategory === index
-                          ? "bg-sky-100 text-sky-500 border-sky-500"
-                          : "bg-white text-sky-500 border-sky-500 hover:bg-sky-100"
+                          ? "bg-sky-100 text-primary border-primary"
+                          : "bg-white text-primary border-primary hover:bg-sky-100"
                       }`}
                     aria-current={activeCategory === index ? "page" : undefined}
                   >
@@ -219,8 +219,8 @@ export default function FAQPage() {
                       className={`flex-shrink-0 px-4 py-2 rounded border text-sm
                         ${
                           activeCategory === index
-                            ? "bg-sky-100 text-sky-500 border-sky-500"
-                            : "bg-white text-sky-500 border-sky-500 hover:bg-sky-100"
+                            ? "bg-sky-100 text-primary border-primary"
+                            : "bg-white text-primary border-primary hover:bg-sky-100"
                         }`}
                     >
                       {cat.category}
@@ -239,7 +239,7 @@ export default function FAQPage() {
         >
           <h2
             id="faq-heading"
-            className="text-lg sm:text-xl font-semibold text-sky-500 mb-4 text-center"
+            className="text-lg sm:text-xl font-semibold text-primary mb-4 text-center"
           >
             {faqData[activeCategory].category}
           </h2>
@@ -272,7 +272,7 @@ export default function FAQPage() {
                   {isOpen && (
                     <dd
                       id={`faq-answer-${id}`}
-                      className="m-4 mb-9 p-6 rounded-lg bg-gray-100 text-gray-600 text-sm sm:text-base leading-relaxed"
+                      className="m-4 mb-9 p-6 rounded-lg bg-gray-100 text-secondary text-sm sm:text-base leading-relaxed"
                     >
                       {faq.a}
                     </dd>

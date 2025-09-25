@@ -150,6 +150,7 @@ import Script from "next/script";
 
 import { jobs } from "./data/careercard";
 import { CareerPageClient } from "./components";
+import { Footer, Navbar } from "@/components";
 
 export const metadata = {
   title: "Careers at Ocean Academy | Job Openings in Puducherry",
@@ -192,12 +193,14 @@ export default function CareerPage() {
 
   return (
     <>
+    <Navbar />
       {/* SEO Structured Data for Job Postings */}
       <Script id="job-posting-ld-json" type="application/ld+json">
         {JSON.stringify(jobPostingSchema)}
       </Script>
 
       <CareerPageClient />
+      <Footer />
     </>
   );
 }

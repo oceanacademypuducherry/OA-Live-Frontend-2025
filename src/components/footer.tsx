@@ -18,8 +18,8 @@ export const Footer = () => {
   return (
     <footer className="bg-[#003B57] text-white">
       {/* Newsletter */}
-      <div className="bg-sky-500">
-        <div className="max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 py-6 gap-6">
+      <div className="bg-primary">
+        <div className="max-w-[90%] lg:max-w-[79%] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 py-6 gap-6">
           {/* Left Section */}
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 text-white w-full text-center sm:text-left">
             <FaEnvelope className="w-8 h-8 shrink-0 mt-1" />
@@ -35,7 +35,7 @@ export const Footer = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col sm:flex-row w-full lg:w-auto items-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto items-center mt-2 gap-3 sm:gap-4">
             <input
               type="email"
               placeholder="Enter your email address"
@@ -189,6 +189,16 @@ export const Footer = () => {
 </Link>
 
                 </li>
+                <li>
+                  <Link href="/career" className="hover:text-sky-400">
+                    Career
+                  </Link>
+                </li>
+                 <li>
+                  <Link href="/faq" className="hover:text-sky-400">
+                  FAQ
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -217,6 +227,11 @@ export const Footer = () => {
                     Verify Certificate
                   </Link>
                 </li>
+                <li>
+                  <Link href="/blog" className="hover:text-sky-400">
+                    Blog
+                  </Link>
+                </li>
               </ul>
 
               {/* Office Hours */}
@@ -227,10 +242,10 @@ export const Footer = () => {
                 <div className="mt-2 text-[14px] md:text-[16px] text-gray-200 leading-relaxed">
                   <div className="flex justify-center sm:justify-start items-center gap-2">
                     <FaClock className="text-[16px] md:text-[18px]" />
-                    <span>Monday – Saturday</span>
+                    <span>Monday – Sunday</span>
                   </div>
                   <div className="flex justify-center sm:justify-start items-center gap-2 mt-1">
-                    <span>9:30 AM – 8:00 PM</span>
+                    <span>9:30 AM – 9:00 PM</span>
                   </div>
                 </div>
               </div>

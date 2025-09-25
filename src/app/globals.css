@@ -14,6 +14,9 @@
   --color-ocean-white:white;
   --color-ocean-skyblue:#E6F6FE;
   --color-secondary:#5C5A5A;
+  --text-title:30px;
+ 
+
 
   --bg-ocean-gradient: linear-gradient(to top, var(--color-ocean-blue), var( --color-ocean-sky));
 
@@ -43,7 +46,7 @@ body {
 }
 
 .animate-vertical-scroll {
-  animation: vertical-scroll 20s linear infinite;
+  animation: vertical-scroll 40s linear infinite;
 }
 
 /* Pause animation on hover */

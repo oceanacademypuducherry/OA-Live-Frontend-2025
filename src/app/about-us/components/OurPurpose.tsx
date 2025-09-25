@@ -39,7 +39,7 @@ const purposes: PurposeItem[] = [
 
 export const OurPurpose = () => {
   return (
-    <section className="bg-white py-10 px-4 sm:px-6">
+    <section className="bg-gray-50 py-10 px-4 sm:px-6">
       <h2 className="text-center text-[20px] sm:text-[24px] md:text-[24px] font-semibold text-primary mb-6">
         Our Purpose
       </h2>
@@ -48,7 +48,7 @@ export const OurPurpose = () => {
         {purposes.map((item, i) => (
           <div
             key={i}
-            className="bg-gray-50 p-4 sm:p-6  rounded-lg shadow transition-transform hover:scale-[1.02]"
+            className="bg-white p-4 sm:p-6  rounded-lg shadow transition-transform hover:scale-[1.02]"
           >
             {/* Image + Title */}
             <div className="flex items-center gap-3 sm:gap-4 mb-3">

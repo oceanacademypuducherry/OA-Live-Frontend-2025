@@ -46,7 +46,7 @@ export const WeBest = () => {
   };
 
   return (
-    <main className="bg-[#F6F9FA] pb-[50px] pt-[15px]">
+    <main className="bg-[#F6F9FA] pb-[50px] sm:pt-[55px] pt-[25px]">
       {/* ✅ JSON-LD SEO Script */}
       <Script
         id="we-best-schema"
@@ -68,21 +68,21 @@ export const WeBest = () => {
         <article className="relative z-10 max-w-[1200px] mx-auto">
           <h2
             id="we-best-heading"
-            className="text-center text-[#4B5563] text-[20px] sm:text-[30px] font-semibold"
+            className="text-center text-[#4B5563] text-[20px] sm:text-title font-normal"
           >
-            Why We're the <span className="text-[#00AEFF]">Best Choice</span>
+            Why We're the <span className="text-primary">Best Choice</span>
           </h2>
-          <p className="text-gray-600 text-center text-[14px] sm:text-[16px] mt-2 max-w-[700px] mx-auto">
+          <p className="text-secondary text-center text-[14px] sm:text-[16px] mt-2 max-w-[700px] mx-auto leading-6">
             Join thousands of successful professionals who choose Ocean Academy
             to transform their careers. Here's why we stand out from the
             competition.
           </p>
 
           {/* Cards */}
-          <section className="flex justify-center gap-[30px] mt-[50px] flex-wrap">
+          <section className="flex justify-center gap-[30px]  mt-[50px] flex-wrap">
             {/* Card 1 */}
             <article
-              className="w-[280px] bg-white rounded-[15px] p-[20px]"
+              className="w-[280px] bg-white rounded-[15px] p-[31px]"
               aria-labelledby="curriculum-title"
             >
               <div className="flex justify-between items-center">
@@ -96,17 +96,17 @@ export const WeBest = () => {
                   20+ courses
                 </span>
               </div>
-              <h3 id="curriculum-title" className="text-[18px]">
+              <h3 id="curriculum-title" className="text-[18px] text-[#000000] font-medium mt-2">
                 World-class Curriculum
               </h3>
-              <p className="text-[#5C5A5A] text-[14px]">
+              <p className="text-[#5C5A5A] text-[14px] leading-6 mt-2">
                 Our tech courses are designed by industry experts and updated
                 regularly.
               </p>
-              <ul>
-                <li className="text-[#737171] text-[13px]">Real-world projects</li>
-                <li className="text-[#737171] text-[13px]">Hands-on learning</li>
-                <li className="text-[#737171] text-[13px]">
+              <ul className="list-disc pl-7 mt-2 space-y-1">
+                <li className="text-secondary text-[13px]">Real-world projects</li>
+                <li className="text-secondary text-[13px]">Hands-on learning</li>
+                <li className="text-secondary text-[13px]">
                   Case studies from leading industries
                 </li>
               </ul>
@@ -114,7 +114,7 @@ export const WeBest = () => {
 
             {/* Card 2 */}
             <article
-              className="w-[280px] bg-white rounded-[15px] p-[20px]"
+              className="w-[280px] bg-white rounded-[15px] p-[31px]"
               aria-labelledby="mentorship-title"
             >
               <div className="flex justify-between items-center">
@@ -124,27 +124,27 @@ export const WeBest = () => {
                   width={60}
                   height={60}
                 />
-                <span className="bg-[#F6F9FA] p-[10px] text-[12px] px-[15px] rounded-[20px] text-[#737171]">
+                <span className="bg-[#F6F9FA] p-[10px] text-[12px] px-[15px] rounded-[20px] text-secondary">
                   25+ mentors
                 </span>
               </div>
-              <h3 id="mentorship-title" className="text-[18px]">
+              <h3 id="mentorship-title" className="text-[18px] text-[#000000] font-medium mt-2">
                 Expert Mentorship
               </h3>
-              <p className="text-[#5C5A5A] text-[14px]">
+              <p className="text-[#5C5A5A] text-[14px] leading-6 mt-2">
                 Get 1-on-1 mentorship from industry professionals with years of
                 experience.
               </p>
-              <ul>
-                <li className="text-[#737171] text-[13px]">1-on-1 guidance</li>
-                <li className="text-[#737171] text-[13px]">Career counseling</li>
-                <li className="text-[#737171] text-[13px]">Interview preparation</li>
+              <ul className="list-disc pl-7 mt-2 space-y-1">
+                <li className="text-secondary text-[13px]">1-on-1 guidance</li>
+                <li className="text-secondary text-[13px]">Career counseling</li>
+                <li className="text-secondary text-[13px]">Interview preparation</li>
               </ul>
             </article>
 
             {/* Card 3 */}
             <article
-              className="w-[280px] bg-white rounded-[15px] p-[20px]"
+              className="w-[280px] bg-white rounded-[15px] p-[31px]"
               aria-labelledby="placement-title"
             >
               <div className="flex justify-between items-center">
@@ -154,21 +154,21 @@ export const WeBest = () => {
                   width={60}
                   height={60}
                 />
-                <span className="bg-[#F6F9FA] p-[10px] text-[12px] px-[15px] rounded-[20px] text-[#737171]">
+                <span className="bg-[#F6F9FA] p-[10px] text-[12px] px-[15px] rounded-[20px] text-secondary">
                   90% Success rate
                 </span>
               </div>
-              <h3 id="placement-title" className="text-[18px]">
+              <h3 id="placement-title" className="text-[18px] text-[#000000] font-medium mt-2">
                 Placement Support
               </h3>
-              <p className="text-[#5C5A5A] text-[14px]">
+              <p className="text-[#5C5A5A] text-[14px] leading-6 mt-2">
                 With 90%+ placement success, we help learners land jobs in top IT
                 firms.
               </p>
-              <ul>
-                <li className="text-[#737171] text-[13px]">Job guarantee</li>
-                <li className="text-[#737171] text-[13px]">Resume building</li>
-                <li className="text-[#737171] text-[13px]">Network access</li>
+              <ul className="list-disc  pl-7 mt-2 space-y-1 ">
+                <li className="text-secondary text-[13px]">Job guarantee</li>
+                <li className="text-secondary text-[13px]">Resume building</li>
+                <li className="text-secondary text-[13px]">Network access</li>
               </ul>
             </article>
           </section>
