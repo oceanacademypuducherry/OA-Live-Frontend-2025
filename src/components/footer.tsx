@@ -208,12 +208,12 @@ export const Footer = () => {
             <div className="w-full">
               <ul className="space-y-3 md:space-y-4 text-[14px] md:text-[16px] text-gray-200 mb-6">
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="https://oceanacademy.co.in/terms-conditions" className="hover:text-sky-400">
                     Terms and Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-sky-400">
+                  <Link href="https://oceanacademy.co.in/privacy-policy" className="hover:text-sky-400">
                     Privacy Policies
                   </Link>
                 </li>

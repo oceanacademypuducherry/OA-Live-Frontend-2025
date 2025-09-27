@@ -50,7 +50,6 @@ export const HeroSection = () => {
 
       {/* Content Wrapper */}
       <div className="max-w-[1700px] mx-auto flex flex-col xl:flex-row items-center justify-center gap-0 md:gap-[20px] xl:gap-[60px] relative z-10">
-
         {/* Left Content (Text) */}
         <div className="text-white xl:text-left  text-center xl:max-w-[40%] max-w-full order-2 xl:order-1">
           <h1 className="text-[26px] md:text-[38px] font-semibold leading-[1.375] mt-5 md:mt-0 sm:mt-5">
@@ -66,21 +65,41 @@ export const HeroSection = () => {
           <div className="flex flex-col text-[15px] sm:text-[16px] mt-6 xl:items-start items-center">
             <div className="flex gap-[15px] mb-2">
               <p className="flex items-center gap-[8px]">
-                <img src={STUDENTCOUNT.src} alt="learned students" height={20} width={20} />
+                <img
+                  src={STUDENTCOUNT.src}
+                  alt="learned students"
+                  height={20}
+                  width={20}
+                />
                 10000+ Students
               </p>
               <p className="flex items-center gap-[8px]">
-                <img src={SEMINARS.src} alt="Free seminars" height={18} width={18} />
+                <img
+                  src={SEMINARS.src}
+                  alt="Free seminars"
+                  height={18}
+                  width={18}
+                />
                 75+ Free seminars
               </p>
             </div>
             <div className="flex gap-[15px]">
               <p className="flex items-center gap-[8px]">
-                <img src={WORKSHOP.src} alt="International Workshop" height={20} width={20} />
+                <img
+                  src={WORKSHOP.src}
+                  alt="International Workshop"
+                  height={20}
+                  width={20}
+                />
                 6 International Workshop
               </p>
               <p className="flex items-center gap-[8px]">
-                <img src={CAREERGUIDANCE.src} alt="Career guidance" height={20} width={20} />
+                <img
+                  src={CAREERGUIDANCE.src}
+                  alt="Career guidance"
+                  height={20}
+                  width={20}
+                />
                 Career guidance
               </p>
             </div>
@@ -97,55 +116,76 @@ export const HeroSection = () => {
         {/* Right Content (Video + Cards) */}
         <div className="flex flex-col items-center order-1 xl:order-2 w-full xl:w-auto mt-8 xl:mt-0">
           <div className="relative group w-fit rounded-[12px] overflow-hidden">
-  <video
-    ref={videoRef}
-    className="h-[220px] sm:h-[300px] md:h-[350px] lg:h-[330px] w-full object-cover"
-    muted
-    playsInline
-    preload="metadata"
-    controls={false}
-    poster={OATHUMB.src}
-  >
-    <source src={REVIEW_VIDEO} type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+            <video
+              ref={videoRef}
+              className="h-[220px] sm:h-[300px] md:h-[350px] lg:h-[330px] w-full object-cover"
+              muted
+              playsInline
+              preload="metadata"
+              controls={false}
+              poster={OATHUMB.src}
+            >
+              <source src={REVIEW_VIDEO} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
-  <div className="absolute inset-0 bg-black/40 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition duration-300 z-10" />
+            <div className="absolute inset-0 bg-black/40 backdrop-blur-[5px] opacity-0 group-hover:opacity-100 transition duration-300 z-10" />
 
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-    {!isPlaying ? (
-      <AiFillPlayCircle
-        className="text-white text-[60px] cursor-pointer"
-        onClick={handlePlay}
-      />
-    ) : (
-      <AiOutlinePauseCircle
-        className="text-white text-[60px] cursor-pointer"
-        onClick={handlePause}
-      />
-    )}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              {!isPlaying ? (
+                <AiFillPlayCircle
+                  className="text-white text-[60px] cursor-pointer"
+                  onClick={handlePlay}
+                />
+              ) : (
+                <AiOutlinePauseCircle
+                  className="text-white text-[60px] cursor-pointer"
+                  onClick={handlePause}
+                />
+              )}
+            </div>
+          </div>
+
+         
+          {/* ✅ Cards below the video */}
+<div className="relative z-10 xl:mt-[-18] mt-5 flex flex-nowrap sm:flex-wrap gap-[15px] xl:ml-7 justify-center xl:justify-start max-400:justify-start w-full overflow-x-auto sm:overflow-visible px-4 sm:px-0">  {/* Card 1 */}
+  <div className="flex items-center gap-2 rounded-[8px] px-3 py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-white sm:h-[70px] h-[55px] w-[110px] sm:w-[150px] flex-shrink-0">
+    <div className="sm:h-[40px] h-[25px] w-[50px] sm:w-[40px] bg-primary rounded-[6px] sm:rounded-[8px] flex items-center justify-center">
+      <img src={ICON.src} alt="students" className="h-[17px] w-[16px] sm:h-[30px] sm:w-[30px]" />
+    </div>
+    <div className="flex flex-col leading-tight">
+      <span className="text-black sm:text-[16px] text-[13px] font-bold">10k+</span>
+      <span className="text-secondary sm:text-[13px] text-[11px] font-medium">Students</span>
+    </div>
+  </div>
+
+  {/* Card 2 */}
+  <div className="flex items-center gap-2 rounded-[8px] px-3 py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-white sm:h-[70px] h-[55px] w-[110px] sm:w-[150px] flex-shrink-0">
+    <div className="sm:h-[40px] h-[25px] w-[50px] sm:w-[50px] bg-primary rounded-[6px] sm:rounded-[8px] flex items-center justify-center">
+      <img src={ICON.src} alt="seminars" className="h-[17px] w-[17px] sm:h-[30px] sm:w-[30px]" />
+    </div>
+    <div className="flex flex-col leading-tight">
+      <span className="text-black sm:text-[16px] text-[13px] font-bold">75+</span>
+      <span className="text-secondary sm:text-[13px] text-[11px] font-medium">Free seminars</span>
+    </div>
+  </div>
+
+  {/* Card 3 */}
+  <div className="flex items-center gap-2 rounded-[8px] sm:px-3 px-2 sm:py-2 py-0 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-white sm:h-[70px] h-[55px] sm:w-[160px] w-[120px] flex-shrink-0">
+    <div className="sm:h-[40px] h-[25px] w-[50px] sm:w-[70px] bg-primary rounded-[6px] sm:rounded-[8px] flex items-center justify-center">
+      <img src={ICON.src} alt="workshops" className="h-[17px] w-[17px] sm:h-[30px] sm:w-[30px]" />
+    </div>
+    <div className="flex flex-col leading-tight">
+      <span className="text-black sm:text-[16px] text-[13px] font-bold">6</span>
+      <span className="text-secondary sm:text-[13px] text-[11px] font-medium">International Workshop</span>
+    </div>
   </div>
 </div>
 
 
-          {/* ✅ Cards below the video */}
-          <div className="mt-5 flex flex-wrap gap-[15px] justify-center xl:justify-start w-full">
-            <div className="flex items-center rounded-[8px] px-[6px] py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-[#ffffff] h-[60px] w-[120px]">
-              <img src={ICON.src} alt="students" className="h-[45px] w-[45px]" />
-              <p className="font-semibold text-center">
-                <span className="text-black text-[16px]">10k+</span> <br />
-                <span className="text-secondary text-[13px] font-medium">Students</span>
-              </p>
-            </div>
 
-            <div className="flex items-center rounded-[8px] px-[6px] py-2 shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-[#ffffff] h-[60px] w-[150px]">
-              <img src={ICON.src} alt="students" className="h-[45px] w-[45px]" />
-              <p className="font-semibold text-start">
-                <span className="text-black text-[16px]">75+</span> <br />
-                <span className="text-secondary font-medium text-[13px]">Free seminars</span>
-              </p>
-            </div>
-          </div>
+
+
         </div>
       </div>
 
@@ -154,24 +194,24 @@ export const HeroSection = () => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "EducationalOrganization",
-          "name": "Ocean Academy",
-          "url": "https://oceanacademy.in",
-          "logo": "https://oceanacademy.in/logo.png",
-          "sameAs": [
+          name: "Ocean Academy",
+          url: "https://oceanacademy.in",
+          logo: "https://oceanacademy.in/logo.png",
+          sameAs: [
             "https://www.facebook.com/oceanacademy",
             "https://www.linkedin.com/company/oceanacademy",
-            "https://www.instagram.com/oceanacademy"
+            "https://www.instagram.com/oceanacademy",
           ],
-          "description":
+          description:
             "Ocean Academy offers IT training courses in Puducherry. Learn MERN, Full Stack, Frontend, Backend, and more from expert mentors.",
-          "address": {
+          address: {
             "@type": "PostalAddress",
-            "streetAddress": "Puducherry Main Road",
-            "addressLocality": "Puducherry",
-            "addressRegion": "PY",
-            "postalCode": "605001",
-            "addressCountry": "IN"
-          }
+            streetAddress: "Puducherry Main Road",
+            addressLocality: "Puducherry",
+            addressRegion: "PY",
+            postalCode: "605001",
+            addressCountry: "IN",
+          },
         })}
       </Script>
     </section>
